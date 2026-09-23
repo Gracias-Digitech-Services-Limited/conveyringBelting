@@ -10,7 +10,8 @@
     "lint": "eslint",
     "seed": "tsx scripts/seed.ts",
     "generate:types": "payload generate:types",
-    "generate:importmap": "payload generate:importmap"
+    "generate:importmap": "payload generate:importmap",
+    "test": "playwright test"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1135.0",
@@ -30,6 +31,7 @@
     "sharp": "^0.35.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^20",
