@@ -49,9 +49,9 @@ export function Footer({
             <div className="flex shrink-0 items-center rounded bg-white px-2.5 py-1 shadow-sm">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/api/media/file/PTB-Logo-png.png"
-                alt="PTB Innovation Ltd"
-                className="h-6 w-auto object-contain"
+                src="/api/media/file/PTB-Monogram.png"
+                alt="ProTech Belting Ireland"
+                className="h-7 w-auto object-contain"
               />
             </div>
             <p className="text-[15px] font-bold text-white">{siteTitle}</p>
