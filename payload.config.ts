@@ -43,7 +43,15 @@ export default buildConfig({
       ? [
           s3Storage({
             collections: {
-              media: true,
+              media: process.env.S3_PUBLIC_URL
+                ? {
+                    // Serve files directly from R2's public URL instead of proxying every
+                    // request through a Vercel serverless function (which was adding ~1-2s of
+                    // pure overhead per image on top of the actual transfer).
+                    disablePayloadAccessControl: true,
+                    generateFileURL: ({ filename }) => `${process.env.S3_PUBLIC_URL}/${filename}`,
+                  }
+                : true,
             },
             bucket: process.env.S3_BUCKET || '',
             config: {
