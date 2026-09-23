@@ -22,6 +22,14 @@ export function Header({ nav, siteTitle }: { nav: NavNode[]; siteTitle: string }
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Dropdown panels stay open via :focus-within (for keyboard users) as well as :hover -
+  // clicking a link inside one keeps browser focus on it through the client-side navigation,
+  // which otherwise leaves that dropdown stuck open (visually overlapping whichever menu is
+  // hovered next) until something else explicitly takes focus.
+  useEffect(() => {
+    ;(document.activeElement as HTMLElement | null)?.blur()
+  }, [pathname])
+
   return (
     <header
       className={`sticky top-0 z-50 text-white transition-all duration-300 ${
