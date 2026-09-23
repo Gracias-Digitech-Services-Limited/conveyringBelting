@@ -1,26 +1,143 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Class-based dark mode (toggled by ThemeToggle), instead of Tailwind v4's OS-preference default. */
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surfaces — warm off-white light mode */
+  --background: #f7f4ef;
+  --foreground: #0d1014;
+  --card: #ffffff;
+  --muted: #f0ece5;
+  --border-subtle: #dbd7d0;
+  --text-muted: #4a505a;
+  --text-faint: #72788a;
+
+  /* Brand */
+  --brand-navy: #0c1520;
+  --brand-navy-light: #162030;
+  --brand-charcoal: #1e2530;
+  --brand-amber: #e0730f;
+  --brand-amber-light: #f5922a;
+
+  /* Industrial iron/grey range */
+  --iron-50: #f5f4f1;
+  --iron-100: #eae7e2;
+  --iron-200: #d5d1ca;
+  --iron-300: #b8b3a8;
+  --iron-400: #8c8780;
+  --iron-500: #6e6860;
+  --iron-600: #5a5450;
+  --iron-700: #3e3a36;
+  --iron-800: #2a2622;
+  --iron-900: #1a1714;
+  --iron-950: #100e0c;
+}
+
+.dark {
+  --background: #0d1014;
+  --foreground: #e8e4dc;
+  --card: #141618;
+  --muted: #0f1215;
+  --border-subtle: #1e2228;
+  --text-muted: #8a9098;
+  --text-faint: #5a6070;
+  /* Brand colours stay the same in both themes — they are fixed brand identity. */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-border-subtle: var(--border-subtle);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-navy-light: var(--brand-navy-light);
+  --color-brand-charcoal: var(--brand-charcoal);
+  --color-brand-amber: var(--brand-amber);
+  --color-brand-amber-light: var(--brand-amber-light);
+  --color-iron-50: var(--iron-50);
+  --color-iron-100: var(--iron-100);
+  --color-iron-200: var(--iron-200);
+  --color-iron-300: var(--iron-300);
+  --color-iron-400: var(--iron-400);
+  --color-iron-500: var(--iron-500);
+  --color-iron-600: var(--iron-600);
+  --color-iron-700: var(--iron-700);
+  --color-iron-800: var(--iron-800);
+  --color-iron-900: var(--iron-900);
+  --color-iron-950: var(--iron-950);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: rgba(224, 115, 15, 0.18);
+  color: inherit;
+}
+
+/* ─── Animations ────────────────────────────────────────────── */
+
+@keyframes belt-move {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(300%); }
+}
+
+/* Seamless belt-strip loop — container is 200% wide, so 50% shift = one repeat */
+@keyframes belt-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes accent-line {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes arrow-slide {
+  0%   { transform: translateX(0); opacity: 1; }
+  50%  { transform: translateX(6px); opacity: 0; }
+  51%  { transform: translateX(-6px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Honour reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

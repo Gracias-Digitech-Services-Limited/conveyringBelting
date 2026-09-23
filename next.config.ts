@@ -1,7 +1,17 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
+import { withPayload } from '@payloadcms/next/withPayload'
+import { buildLegacyRedirects } from './lib/legacyRedirects'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'conveyorbelting.ie' },
+      { protocol: 'https', hostname: '*.s3.*.amazonaws.com' },
+    ],
+  },
+  async redirects() {
+    return buildLegacyRedirects()
+  },
+}
 
-export default nextConfig;
+export default withPayload(nextConfig, { devBundleServerPackages: false })
