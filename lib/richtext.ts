@@ -39,15 +39,78 @@ interface LexicalHeadingNode {
   direction: 'ltr'
 }
 
+/** Payload's built-in lexical Upload node (`@payloadcms/richtext-lexical`'s UploadFeature) -
+ * a block-level decorator node embedding a `media` relationship inline in the document. */
+interface LexicalUploadNode {
+  type: 'upload'
+  version: 3
+  format: ''
+  id: string
+  relationTo: 'media'
+  value: string
+  fields: null
+}
+
 export interface LexicalDocument {
   root: {
     type: 'root'
     format: ''
     indent: 0
     version: 1
-    children: Array<LexicalParagraphNode | LexicalHeadingNode>
+    children: Array<LexicalParagraphNode | LexicalHeadingNode | LexicalUploadNode>
     direction: 'ltr'
   }
+}
+
+function randomNodeId(): string {
+  return Array.from({ length: 24 }, () => Math.floor(Math.random() * 16).toString(16)).join('')
+}
+
+function uploadNode(mediaId: string): LexicalUploadNode {
+  return {
+    type: 'upload',
+    version: 3,
+    format: '',
+    id: randomNodeId(),
+    relationTo: 'media',
+    value: mediaId,
+    fields: null,
+  }
+}
+
+export interface ContentBlock {
+  type: 'paragraph' | 'heading' | 'image'
+  text?: string
+  mediaId?: string
+}
+
+/**
+ * Builds a richText document from an ordered sequence of blocks (paragraph/heading text, or an
+ * already-resolved media doc id for an image) - used for the pages whose live body content
+ * interleaves photos with prose, restored via data/conveyorbelting-content-images-supplement.json
+ * since the plain-text export dropped them. Unlike `plainTextToLexical`, block type and order are
+ * taken as given rather than guessed from blank lines.
+ */
+export function blocksToLexical(blocks: ContentBlock[]): PayloadRichText {
+  const children = blocks
+    .map((b) => {
+      if (b.type === 'image') return b.mediaId ? uploadNode(b.mediaId) : null
+      const text = decodeWpEntities(b.text || '').trim()
+      if (!text) return null
+      return b.type === 'heading' ? heading(text) : paragraph(text)
+    })
+    .filter((n): n is LexicalParagraphNode | LexicalHeadingNode | LexicalUploadNode => n !== null)
+
+  return {
+    root: {
+      type: 'root',
+      format: '',
+      indent: 0,
+      version: 1,
+      children: children.length ? children : [paragraph('')],
+      direction: 'ltr',
+    },
+  } as unknown as PayloadRichText
 }
 
 function textNode(text: string): LexicalTextNode {

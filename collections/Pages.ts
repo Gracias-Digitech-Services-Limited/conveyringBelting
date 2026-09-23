@@ -61,6 +61,28 @@ export const Pages: CollectionConfig = {
       type: 'richText',
     },
     {
+      name: 'embeds',
+      type: 'group',
+      admin: {
+        description: 'YouTube video / PDF embeds carried over from the live site - the plain-text WordPress export dropped these, so they are restored separately (see data/conveyorbelting-embeds-supplement.json).',
+      },
+      fields: [
+        {
+          name: 'youtubeVideoId',
+          type: 'text',
+        },
+        {
+          name: 'youtubeTitle',
+          type: 'text',
+        },
+        {
+          name: 'pdfAttachment',
+          type: 'relationship',
+          relationTo: 'media',
+        },
+      ],
+    },
+    {
       name: 'seo',
       type: 'group',
       fields: [

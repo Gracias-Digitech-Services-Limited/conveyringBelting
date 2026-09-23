@@ -191,6 +191,14 @@ export interface Page {
     };
     [k: string]: unknown;
   } | null;
+  /**
+   * YouTube video / PDF embeds carried over from the live site - the plain-text WordPress export dropped these, so they are restored separately (see data/conveyorbelting-embeds-supplement.json).
+   */
+  embeds?: {
+    youtubeVideoId?: string | null;
+    youtubeTitle?: string | null;
+    pdfAttachment?: (string | null) | Media;
+  };
   seo?: {
     metaTitle?: string | null;
     metaDescription?: string | null;
@@ -406,6 +414,13 @@ export interface PagesSelect<T extends boolean = true> {
   status?: T;
   needsCopy?: T;
   content?: T;
+  embeds?:
+    | T
+    | {
+        youtubeVideoId?: T;
+        youtubeTitle?: T;
+        pdfAttachment?: T;
+      };
   seo?:
     | T
     | {

@@ -1,0 +1,2427 @@
+{
+  "_comment": "Precisely ordered paragraph/heading/image blocks for pages whose live WordPress body content includes inline photos that the plain-text-only migration export dropped. Extracted from the live conveyorbelting.ie page HTML (#content-vw), in document order, with nav/header/footer noise and the separately-handled PDF/video embeds stripped out. Image src values are matched to already-migrated Payload media docs by filename at seed time (see scripts/seed.ts).",
+  "pages": [
+    {
+      "slug": "bakery-depanner-belt",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2026/05/Suction-Cup-Metal-Detectable-Depanner-Belt.jpg",
+          "alt": "Bakery – Depanner Belt post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Depanner belts with suction cups designed for efficient handling and transfer of different types of bread in bakery production lines. Built for reliable performance, smooth product movement, and long-lasting durability in demanding bakery environments."
+        }
+      ]
+    },
+    {
+      "slug": "hipro-pvc-conveyor-belt",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Hipro_PVC_Conveyor_Belt.png",
+          "alt": "Hipro PVC Conveyor Belt post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Resistant to mineral oils."
+        },
+        {
+          "type": "paragraph",
+          "text": "Abrasion resistant."
+        },
+        {
+          "type": "paragraph",
+          "text": "Anti-static."
+        },
+        {
+          "type": "paragraph",
+          "text": "Green."
+        },
+        {
+          "type": "paragraph",
+          "text": "For Paper & Printing and industrial applications."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "chicken-manure-conveyor-belt",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2025/04/Chicken-Manure-Conveyor-Belt-1-scaled-e1745510547187.png",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd – Chicken Manure conveyor belts; supplying the poultry Industry throughout Ireland."
+        },
+        {
+          "type": "paragraph",
+          "text": "We can join them upon request justask@ptbltd.ie"
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2025/04/Chicken-shit-conveyor-belt-1-scaled.jpeg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor belts for collecting and drying manure"
+        },
+        {
+          "type": "paragraph",
+          "text": "Mature conveyor belts designed for the collection and drying of poultry manure in plain and perforated polypropylene."
+        },
+        {
+          "type": "paragraph",
+          "text": "Plain manure collection belt, length is variable according to thickness."
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2025/04/Screenshot-2025-04-24-at-12.42.13-1.png",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Perforated manure drying belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Perforated copolymer polypropylene belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Egg Collection in perforated and woven polypropylene"
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2025/04/Egg-collection-conveyor-belt-ireland-1024x683.jpeg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Round or Square hole egg conveyor belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Thickness upon request"
+        },
+        {
+          "type": "paragraph",
+          "text": "Perforated egg conveyor belt is specially designed for egg collection system in poultry farming house.  Square holes or round holes are both available. We supply standard holes patterns, and also can make according to customers’ request or samples."
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2025/04/Egg-collection-woven-conveyor-belt-ireland-1-scaled.jpeg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Egg conveyance, woven collection conveyor belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "The herringbone structure strong and durable which guarantees compactness, low elongation to the belt with good tenacity."
+        },
+        {
+          "type": "paragraph",
+          "text": "Length, Width and thickness upon request"
+        },
+        {
+          "type": "paragraph",
+          "text": "Simple process of drying out poultry manure"
+        },
+        {
+          "type": "paragraph",
+          "text": "Chicken manure conveyor belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "ROI Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "NI Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd :"
+        },
+        {
+          "type": "paragraph",
+          "text": "Elmgrove : Gormanston : County Meath :"
+        },
+        {
+          "type": "paragraph",
+          "text": "T: 00353 1800 93 8765"
+        },
+        {
+          "type": "paragraph",
+          "text": "justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "novak-pvc-conveyor-belt",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/10/Novak_Conveyor_Belt.jpg",
+          "alt": "Novak PVC Conveyor Belt post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Novak PVC Conveyor Belt is resistant to vegetable oils."
+        },
+        {
+          "type": "paragraph",
+          "text": "Partially resistant to animal fats."
+        },
+        {
+          "type": "paragraph",
+          "text": "FDA and EU food quality."
+        },
+        {
+          "type": "paragraph",
+          "text": "Blue for food applications."
+        },
+        {
+          "type": "paragraph",
+          "text": "PVC Belts – ASTER, CLINA, NOVAK"
+        },
+        {
+          "type": "paragraph",
+          "text": "White and blue colour."
+        },
+        {
+          "type": "paragraph",
+          "text": "Rigid weft, with smooth or patterned top cover and patterned bottom cover, allowing the belt to slide on a stainless steel slider bed. C12CK, C20CK, C30CK, N20CK."
+        },
+        {
+          "type": "paragraph",
+          "text": "Flexible weft, with top and bottom PVC covers for troughed conveyor.  A21ZK, A26XC, C21CK, N19CK."
+        },
+        {
+          "type": "paragraph",
+          "text": "FDA & EU food quality."
+        },
+        {
+          "type": "paragraph",
+          "text": "Excellent resistance to moisture."
+        },
+        {
+          "type": "paragraph",
+          "text": "Sealed edges option available."
+        },
+        {
+          "type": "paragraph",
+          "text": "Apart from complying with the FDA and EU food quality, anti-microbial belt options are also available to help improve HACCP system management in meat and poultry processing plants."
+        },
+        {
+          "type": "heading",
+          "text": "Successful Experience"
+        },
+        {
+          "type": "paragraph",
+          "text": "Application: Duck Confit processing line."
+        },
+        {
+          "type": "paragraph",
+          "text": "The client used high-grade PVC food belts."
+        },
+        {
+          "type": "paragraph",
+          "text": "Problem: Multiple creases and cracks appear on the belt. Former PVC belt lasted 2 months (max.) due to de-lamination caused by cleaning and the oils/fat."
+        },
+        {
+          "type": "paragraph",
+          "text": "Solution: After installing Esbelt NOVAK S 20UFMT, the belts working life was extended to almost 1 year."
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/10/Screenshot-2021-10-12-at-22.46.23.png",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Novak Conveyor Belt – Duck Confit Line"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "drago-pvc-conveyor-belt",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/08/Drago.jpg",
+          "alt": "Drago PVC Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "heading",
+          "text": "Choose the right bucket"
+        },
+        {
+          "type": "paragraph",
+          "text": "Drago PVC Conveyor belt bucket belts; choose from our lightweight range of polyethylene and polyamide thermoplastic elevator buckets with capacities from 0,22L  to 3,45L.   For carrying granular products (cereals, feeds, oleaginious fruit, etc.)"
+        },
+        {
+          "type": "heading",
+          "text": "Features of Bucket Elevator Belts:"
+        },
+        {
+          "type": "paragraph",
+          "text": "High load capacity, therefore increasing production."
+        },
+        {
+          "type": "paragraph",
+          "text": "Low energy consumption."
+        },
+        {
+          "type": "paragraph",
+          "text": "Low elongation."
+        },
+        {
+          "type": "paragraph",
+          "text": "ATEX (EXII 2 GDC)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Antistatic (ISO 284)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Oil resistant."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our most commonly used bucket elevators belts are:"
+        },
+        {
+          "type": "paragraph",
+          "text": "DRAGO 30CC, 40CC & 81CC"
+        },
+        {
+          "type": "heading",
+          "text": "Choose the right belt for bucket elevator application."
+        },
+        {
+          "type": "paragraph",
+          "text": "A thick belt is not always the most appropriate one and a bucket elevator belt works differently compared to a conveyor belt.   Choosing the right belt for your bucket elevator can reduce time and costs of maintenance, save energy and improve production capacity and efficiency.   Contact us and tell us about your elevating needs, we will help you assess your requirements."
+        },
+        {
+          "type": "paragraph",
+          "text": "DRAGO PVC Conveyor Belt SERIES: industrial (non food) products, is special when resistance to abrasion and mineral oils is needed"
+        },
+        {
+          "type": "paragraph",
+          "text": "In-organic fertilisers, detergents, clays, coal."
+        },
+        {
+          "type": "paragraph",
+          "text": "Belts without protection will exhibit problems, Using the proper Esbelt elevator belt will prevent the following: –\n\nSurface cracking, chipping or flaking and loss of belt cover.\n\n\n\nHardening of the cover and loss of grip on the drive pulley."
+        },
+        {
+          "type": "paragraph",
+          "text": "Surface cracking, chipping or flaking and loss of belt cover."
+        },
+        {
+          "type": "paragraph",
+          "text": "Hardening of the cover and loss of grip on the drive pulley."
+        },
+        {
+          "type": "paragraph",
+          "text": "BENEFIT: helps avoiding the risk of contaminating the product by cover fragments. The fact of conserving a good belt’s cover elasticity, facilitates the adherence with the drive pulley, reducing the risk of breakage or damage by excessive friction. All result in reduction of incidents and improvement in times of maintenance, which are translated into improved costs."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd :"
+        },
+        {
+          "type": "paragraph",
+          "text": "Elmgrove : Gormanston : County Meath : K32 C925"
+        },
+        {
+          "type": "paragraph",
+          "text": "T: 00353 1800 93 8765"
+        },
+        {
+          "type": "paragraph",
+          "text": "justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "breda-pvc-conveyor-belt",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/08/Breda_Banner.jpg",
+          "alt": "Breda PVC Conveyor Belt post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Breda PVC Conveyor Belt is the longest lasting conveyor belt in greenhouse application"
+        },
+        {
+          "type": "paragraph",
+          "text": "BREDA-X-10UF MT, green PU belt."
+        },
+        {
+          "type": "paragraph",
+          "text": "Durable and strong top cover that does not crack even on small pulleys."
+        },
+        {
+          "type": "heading",
+          "text": "Our belt characteristics:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hard & matt PU cover for pot conveyance."
+        },
+        {
+          "type": "paragraph",
+          "text": "High transversal rigidity, belt stays completely flat without rising edges, good for perpendicular transfers."
+        },
+        {
+          "type": "paragraph",
+          "text": "Low friction co-efficient cover that allows accumulation of pots."
+        },
+        {
+          "type": "paragraph",
+          "text": "High longitudinal flexibility for working with small diameter pulleys."
+        },
+        {
+          "type": "paragraph",
+          "text": "Machine welded longitudinal guides."
+        },
+        {
+          "type": "paragraph",
+          "text": "The cultivation of indoor plants and flowers in greenhouses involves a great deal of moving of potted plants."
+        },
+        {
+          "type": "paragraph",
+          "text": "The greenhouses are divided into various sections and thousands of pots are moved among them every hour."
+        },
+        {
+          "type": "paragraph",
+          "text": "Each greenhouse can produce millions of plants a year and the mechanization of greenhouses with conveyor belts greatly increases productivity."
+        },
+        {
+          "type": "paragraph",
+          "text": "In general belt widths range between 160mm to 400mm while the lengths vary depending on the conveyor, but may reach 90 m."
+        },
+        {
+          "type": "paragraph",
+          "text": "Excellent Chemical Resistance"
+        },
+        {
+          "type": "paragraph",
+          "text": "One of the industries with the highest turnover of belts in adverse working conditions during the manufacturing process is the production of bricks and tiles.  For example, in the extrusion and cutting of brick, the belts are subject to abrasion and aggression from diesel with is often used as a de-moulding agent."
+        },
+        {
+          "type": "heading",
+          "text": "Similar application"
+        },
+        {
+          "type": "paragraph",
+          "text": "Preparation of flower bouquets and preservation of flowers in pots with chemical solutions."
+        },
+        {
+          "type": "paragraph",
+          "text": "Breda PVC Conveyor Belt BREDA 12UF"
+        },
+        {
+          "type": "paragraph",
+          "text": "High dimensional stability."
+        },
+        {
+          "type": "paragraph",
+          "text": "Resistant to chemicals."
+        },
+        {
+          "type": "paragraph",
+          "text": "Low friction coefficient."
+        },
+        {
+          "type": "paragraph",
+          "text": "Resistant to mineral oils."
+        },
+        {
+          "type": "paragraph",
+          "text": "Excellent mechanical performance."
+        },
+        {
+          "type": "paragraph",
+          "text": "The working life of a standard belt is usually between 8 months and a year.  Our Breda PVC Conveyor belts usually last an average of three years, i.e. 3 times longer."
+        },
+        {
+          "type": "paragraph",
+          "text": "Abrasion resistant."
+        },
+        {
+          "type": "paragraph",
+          "text": "Cut resistant."
+        },
+        {
+          "type": "paragraph",
+          "text": "Anti-static."
+        },
+        {
+          "type": "paragraph",
+          "text": "Green."
+        },
+        {
+          "type": "paragraph",
+          "text": "For tiles, ceramics, stone and industrial applications."
+        },
+        {
+          "type": "paragraph",
+          "text": "Some examples of Applications"
+        },
+        {
+          "type": "paragraph",
+          "text": "The wood industry: furniture factories, varnishers, pallets and boards etc."
+        },
+        {
+          "type": "paragraph",
+          "text": "Construction material manufacture: bricks, tiles, plaster boards, fibre cement boards to name a few."
+        },
+        {
+          "type": "paragraph",
+          "text": "Insulating materials: rock wool, fibreglass, polyurethanes."
+        },
+        {
+          "type": "paragraph",
+          "text": "Stamping, cutting and reeling of sheet metal: automobile industry, household appliances."
+        },
+        {
+          "type": "paragraph",
+          "text": "Cardboard and paper: cutting machines, folding machines, transfers, stackers."
+        },
+        {
+          "type": "paragraph",
+          "text": "Printing: offset."
+        },
+        {
+          "type": "paragraph",
+          "text": "Recycling industry: classifiers, separators, magnetic elevators."
+        },
+        {
+          "type": "paragraph",
+          "text": "Textile industry: mono block aprons, material loader-mixers, non-woven fabric, stamping."
+        },
+        {
+          "type": "paragraph",
+          "text": "Non-organic fertilisers."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 :"
+        },
+        {
+          "type": "paragraph",
+          "text": "T: 00353 (0) 89 474 8666 : +353 1800 93 8765 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "aster-pvc-conveyor-belts",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/ASTER_PVC_Conveyor_Belt.png",
+          "alt": "Aster PVC Conveyor Belts post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Esbelt Aster PVC Conveyor Belts with top cover embossment for inclined conveyors."
+        },
+        {
+          "type": "paragraph",
+          "text": "For lifting or lowering packaged or bulked products."
+        },
+        {
+          "type": "paragraph",
+          "text": "White and FDA, EU food quality available for food and agro sectors."
+        },
+        {
+          "type": "paragraph",
+          "text": "Green, black and red available for industrial applications."
+        },
+        {
+          "type": "heading",
+          "text": "PVC Conveyor belts that guarantee a secure transfer of goods"
+        },
+        {
+          "type": "paragraph",
+          "text": "Our standard range of belts offers several options for each type of application."
+        },
+        {
+          "type": "heading",
+          "text": "Our belt features:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Anti-static ISO 284"
+        },
+        {
+          "type": "paragraph",
+          "text": "Flame retardant ISO 340"
+        },
+        {
+          "type": "paragraph",
+          "text": "Abrasion resistant"
+        },
+        {
+          "type": "paragraph",
+          "text": "Silent fabric bottom cover for noise reduction"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dimensional stability, good alignment"
+        },
+        {
+          "type": "paragraph",
+          "text": "Strong and durable splice performance"
+        },
+        {
+          "type": "paragraph",
+          "text": "Belts A15QF, A15G2F & A15W3F"
+        },
+        {
+          "type": "paragraph",
+          "text": "Aster PVC Conveyor Belts designed for logistics and distribution centres that are getting bigger and they rely on a large number of conveyors. They require conveyors that can operate with a wide variety of products at different load volumes and to function reliably at full capacity."
+        },
+        {
+          "type": "paragraph",
+          "text": "The ASTER PVC Conveyor belts series for logistics and distribution centres easily meet the needs of the sector, compliant with the requirements for handling, conveying and classifying goods. The high quality and reliability of our belts translate into optimum performance, proven by numerous companies in the sector."
+        },
+        {
+          "type": "paragraph",
+          "text": "Aster 15QF"
+        },
+        {
+          "type": "paragraph",
+          "text": "Inclined Conveyors (ascending/decending)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Diverter System"
+        },
+        {
+          "type": "paragraph",
+          "text": "Package identification"
+        },
+        {
+          "type": "paragraph",
+          "text": "Aster 15G2F"
+        },
+        {
+          "type": "paragraph",
+          "text": "Diverter System"
+        },
+        {
+          "type": "paragraph",
+          "text": "Aster 15W3F"
+        },
+        {
+          "type": "paragraph",
+          "text": "Diverter System"
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Aster_PVC_Conveyor_Belt-1.png",
+          "alt": "Aster_Conveyor_Belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Aster 36X1C with Herringbone profile and side walls"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Gormanston : County Meath : K32 C925"
+        }
+      ]
+    },
+    {
+      "slug": "solid-pu",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Volta Belting solid PU conveyor belt range, designed to solve the two most common mechanical problems.  While offering long life, hygienic low noise solution conveyor belts."
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2024/07/SuperDrive.png",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "SuperDrive™"
+        },
+        {
+          "type": "paragraph",
+          "text": "SD Positive Drive Belt anti-slip, stays on track"
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2024/07/Mini-SuperDrive-2-1024x742.png",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Mini SuperDrive™"
+        },
+        {
+          "type": "paragraph",
+          "text": "MSD Positive Drive Belt, smooth conveying with no pretension required"
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2024/07/DualDrive.png",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "DualDrive™"
+        },
+        {
+          "type": "paragraph",
+          "text": "DD fully extruded, smooth homogeneous with integral teeth on drive side that can act as built in cleats"
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2024/07/Mini-DualDrive-4.png",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Mini DualDrive™"
+        },
+        {
+          "type": "paragraph",
+          "text": "MDD 1″ pitch Volta Positive Drive, full width teeth give extra lateral rigidity."
+        },
+        {
+          "type": "paragraph",
+          "text": "PDF Downloads"
+        },
+        {
+          "type": "paragraph",
+          "text": "ProTech Belting Ireland : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "pu",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "PU Belts: – BREDA, CLINA, NOVAK PU BELTS and PU ROUND BELTS"
+        },
+        {
+          "type": "paragraph",
+          "text": "FDA Food Grade conveyor belting Ireland"
+        },
+        {
+          "type": "paragraph",
+          "text": "Transparent, white and blue."
+        },
+        {
+          "type": "paragraph",
+          "text": "Resistant to animal fats and oils."
+        },
+        {
+          "type": "paragraph",
+          "text": "Abrasion resistant."
+        },
+        {
+          "type": "paragraph",
+          "text": "Cut resistant.  B22UFTR, CS20UFMT, NS20UFMT."
+        },
+        {
+          "type": "paragraph",
+          "text": "FDA & EU food quality."
+        },
+        {
+          "type": "paragraph",
+          "text": "Double cover PU belt. NX09 UA2MT-AM"
+        },
+        {
+          "type": "paragraph",
+          "text": "Anti-hydrolysis and anti-microbial belts."
+        },
+        {
+          "type": "paragraph",
+          "text": "Sealed edges option."
+        },
+        {
+          "type": "paragraph",
+          "text": "Round & trapezoidal extruded belts."
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2022/05/appli-1024x683.jpg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Solid PU FDA conveyor belt, with side walls."
+        },
+        {
+          "type": "paragraph",
+          "text": "ProTech Belting Ireland : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "sugar",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Sugar_banner.jpg",
+          "alt": "Sugar / Confectionery – Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "heading",
+          "text": "Increase productivity with our sugar industry belts."
+        },
+        {
+          "type": "paragraph",
+          "text": "Meet all food hygiene and industrial safety regulations."
+        },
+        {
+          "type": "paragraph",
+          "text": "Lightweight, abrasion resistant and low elongation."
+        },
+        {
+          "type": "paragraph",
+          "text": "Whether you produce sugar from sugar beet or sugar cane, we have the right sugar industry belts for you.  We offer various options covering different mechanical specifications, e.g. troughed, straight or inclined conveyors and bucket elevators."
+        },
+        {
+          "type": "paragraph",
+          "text": "The PVC covers permit more specific and efficient formulations compared to rubber and can match perfectly the requirements of the sugar industry."
+        },
+        {
+          "type": "paragraph",
+          "text": "The abrasion resistant quality enables our belts to last up to 35% longer than other alternatives in the market."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our sugar industry belts are available from 2 to 4-ply.  This multi-ply fabric construction distributes the load uniformly, reducing elongation and stoppage, thus increasing productivity."
+        },
+        {
+          "type": "heading",
+          "text": "Sealed edges for sugar industry belt"
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Sealed_Edges.jpg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "ProTech Belting Ireland : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "fruit-veg",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Fruit_veg_banner2.jpg",
+          "alt": "Fruit & Veg – Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Belts for harvesting, washing, cutting, packing and conveying a variety of fruits and vegetables."
+        },
+        {
+          "type": "paragraph",
+          "text": "Wide array of PVC and PU belts in white, green and blue that comply with FDA & EU food regulations to select from."
+        },
+        {
+          "type": "paragraph",
+          "text": "Different types of profiles can be welded on the belt surface to adapt to the type of fruits of vegetables so that they do not get bruised during the process."
+        },
+        {
+          "type": "paragraph",
+          "text": "Light-weight, water-resistant, easy to mount and maintain."
+        },
+        {
+          "type": "paragraph",
+          "text": "A variety of belts with different features to choose from depending on the types of fruits or vegetable and the type of process."
+        },
+        {
+          "type": "paragraph",
+          "text": "Fruit belts and vegetable belts available with both covers PVC or PU."
+        },
+        {
+          "type": "paragraph",
+          "text": "Washflow mesh belts available."
+        },
+        {
+          "type": "paragraph",
+          "text": "Possibility to mould or seal belt edges."
+        },
+        {
+          "type": "paragraph",
+          "text": "Horizontal or longitudinal profiles, sidewalls, wave profiles, long or short finger profiles can be attached on belt surface for inclined conveying."
+        },
+        {
+          "type": "paragraph",
+          "text": "Comply with FDA and EU 1935/2004 regulations."
+        },
+        {
+          "type": "paragraph",
+          "text": "MSDS, certificate of conformity, phthalate-free certificates available upon request."
+        },
+        {
+          "type": "paragraph",
+          "text": "Due to the variety of fruits and vegetables available in the market, different processes require different belt manipulation to adapt to the needs of each application."
+        },
+        {
+          "type": "paragraph",
+          "text": "Esbelt has more than 30 years of experience supplying ESPOT and CLINA belts for canned fruits processing like coconut, pineapples, papayas, peaches, fruit cocktails etc."
+        },
+        {
+          "type": "paragraph",
+          "text": "Fruit conveyor belts,  depending on the fruit hat is carried,  we offer different types of profiles that can be welded onto the belt top cover, .  For soft-skinned fruits where a lot of care needs to be taken to avoid bruises on the fruits, waved profiles and finger profiles, sidewalls are welded onto PVC belt surfaces to allow for a ´´soft-landing´´ of the fruits during processing."
+        },
+        {
+          "type": "paragraph",
+          "text": "For vegetable conveyor belts, apart from PVC types, we also offer double cover PU Novak S07AY for vegetable shredding machine and TPU mesh belts, WASHFLOW for the washing and draining processes."
+        },
+        {
+          "type": "paragraph",
+          "text": "PDF A5 Flyer"
+        },
+        {
+          "type": "paragraph",
+          "text": "FDA Food Grade conveyor belting Ireland"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd, Conveyor Belting for the Fruit & Veg Industry"
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Fruit_Veg_banner1.jpg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "SuperDrive Solid PU Conveyor belting Ireland"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "bucket-elevators",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/bucket-elevator-banner.jpg",
+          "alt": "Bucket Elevator – Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bucket Elevator Belts & Elevator Buckets"
+        },
+        {
+          "type": "paragraph",
+          "text": "Meet industrial safety regulations."
+        },
+        {
+          "type": "paragraph",
+          "text": "Low energy consumption, low belt elongation."
+        },
+        {
+          "type": "paragraph",
+          "text": "A bucket elevator belt is a combination of high strength belting with metal or plastic buckets attached to it.  It is commonly used for elevating bulk products in granular form in an enclosed structure to a higher point for unloading into a silo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our bucket elevator belts with multi-layer fabric construction distributes load evenly reducing elongation.  Less time is needed to re-tension the belts, saving maintenance costs.  Lighter compared to rubber belts, energy consumption is reduced by using our bucket elevator belts, lowering production costs."
+        },
+        {
+          "type": "paragraph",
+          "text": "We have a wide range of belt types for different products.  Food grade, abrasion resistant, vegetable oil and animal fat resistant belts are available for food applications.  Abrasion, cut and mineral oil resistant belts are also available for industrial applications."
+        },
+        {
+          "type": "paragraph",
+          "text": "Features of Bucket Elevator Belts:"
+        },
+        {
+          "type": "paragraph",
+          "text": "High load capacity."
+        },
+        {
+          "type": "paragraph",
+          "text": "Low energy consumption."
+        },
+        {
+          "type": "paragraph",
+          "text": "Low elongation."
+        },
+        {
+          "type": "paragraph",
+          "text": "ATEX (EXII 2 GDC)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Antistatic (ISO 284)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Oil resistant."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd :"
+        },
+        {
+          "type": "paragraph",
+          "text": "Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 :"
+        },
+        {
+          "type": "paragraph",
+          "text": "T: 00353 (0) 89 474 8666 : +353 1800 93 8765 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "ceramic",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Ceramic_Banner.jpg",
+          "alt": "Ceramic – Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Find out about the advantages and benefits of our belts designed for use in the production of roof tiles, bricks, ceramic wall tiles and pavements."
+        },
+        {
+          "type": "paragraph",
+          "text": "Highly resistant to chemical additives and mineral oils."
+        },
+        {
+          "type": "paragraph",
+          "text": "Resistant to abrasion."
+        },
+        {
+          "type": "paragraph",
+          "text": "Resistant to temperature of atomized clay."
+        },
+        {
+          "type": "paragraph",
+          "text": "High mechanical resistance."
+        },
+        {
+          "type": "paragraph",
+          "text": "Light & flexible."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our Drago series belts, D20CC, D30CC and D40CC are commonly used in trough conveyors especially after the atomizer as our belts have proven to resist the high temperature of the atomized clay."
+        },
+        {
+          "type": "paragraph",
+          "text": "For vertical bucket elevators, D30CC, D40CC, D81CC belts with high working load are recommended and our Vercan series polyamide buckets which are abrasion and temperature resistant are a lighter and more energy-saving choice compared to conventional metallic buckets."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our Breda and Hipro series belts are popular choices for conveying processed clay from molders, extruders, presses and cutters in roof tiles and brick production. Cleats and sidewalls can also be fixed to our Breda series belts which work efficiently as inclined conveying of powdered clay and minerals."
+        },
+        {
+          "type": "paragraph",
+          "text": "Although our green Drago, Breda and Hipro belts are most commonly used in the ceramic industry, we do have clients who prefer to use our Febor series white belts for conveying white clay."
+        },
+        {
+          "type": "paragraph",
+          "text": "During the process of glazing, our PU round belts (RS and RK series) are used to convey the ceramic tiles through curves and the ridge top v-belts (PS & PK series) are used to carry the tiles through liquid glaze.   For general conveying of the tiles, our trapezoidal vee-belts (TS and TK Series with rough top covers) are the preferred choice in many ceramic tile production plants."
+        },
+        {
+          "type": "paragraph",
+          "text": "Examples of belts in ceramic industry application:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Drago 30CC conveying atomized white clay."
+        },
+        {
+          "type": "paragraph",
+          "text": "Inclined Breda belt with cleats & sidewalls."
+        },
+        {
+          "type": "paragraph",
+          "text": "Breda belt in brick cutting line."
+        },
+        {
+          "type": "image",
+          "src": "https://i2.wp.com/conveyorbelting.ie/wp-content/uploads/2021/07/Sq_Blue_ceramic_tile.jpg?ssl=1",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://i1.wp.com/conveyorbelting.ie/wp-content/uploads/2021/07/Sq_Ceramic_Brick.jpg?ssl=1",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://i0.wp.com/conveyorbelting.ie/wp-content/uploads/2021/07/Sq_Ceramic_Clay-1.jpg?ssl=1",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://i2.wp.com/conveyorbelting.ie/wp-content/uploads/2021/07/Sq_Ceramic_Roof.jpg?ssl=1",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://i2.wp.com/conveyorbelting.ie/wp-content/uploads/2021/07/sq_ceramic_Tile.jpg?ssl=1",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://i0.wp.com/conveyorbelting.ie/wp-content/uploads/2021/07/Sq_Ceramic_Brick-1.jpg?ssl=1",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : +353 1800 93 8765 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "corrugated",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Corrigated_Banner.jpg",
+          "alt": "Corrugated Boxes – Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "heading",
+          "text": "Conveyor Belts for Corrugated Carton Box"
+        },
+        {
+          "type": "heading",
+          "text": "Conveyor and process belts in the corrugated carton box industry."
+        },
+        {
+          "type": "paragraph",
+          "text": "Maintain a continuous flow of production, high performance with speed up to 400 m/minute, high resistance to wear, prolonged working lifetime."
+        },
+        {
+          "type": "heading",
+          "text": "Belt features in the corrugated carton box industry:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Belts with top cover patterns that offer excellent grip, avoiding slips and product jams."
+        },
+        {
+          "type": "paragraph",
+          "text": "Excellent resistance to abrasion."
+        },
+        {
+          "type": "paragraph",
+          "text": "Belts with longitudinal patterns in the printing process, prevents the ink from forming a film on the belt and affecting the grip."
+        },
+        {
+          "type": "paragraph",
+          "text": "Possibility to drill holes for suction. Vacuum effect to hold the product in place and avoids sliding."
+        },
+        {
+          "type": "paragraph",
+          "text": "Very stable in applications with high speed (up to 4m/s) improving production."
+        },
+        {
+          "type": "paragraph",
+          "text": "Flat transmission belts and high performance Hipro series in applications with high abrasion."
+        },
+        {
+          "type": "heading",
+          "text": "In the corrugated carton box industry, there are 2 types of processes:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Corrugators or carton production – Production of corrugated carton from big rolls of craft paper. The sheets produced are cut into different dimensions and used for carton box production. Belts between 2 and 3m wide, in some cases with longitudinal guides to help with the alignment, are used at the exit, die-cutter and stacker of the carton sheets.  The grouping of cut sheets are done on belts with top cover patterns on inclined sections and smooth belts on level sections."
+        },
+        {
+          "type": "paragraph",
+          "text": "Corrugated carton box production – Carton sheets are cut, printed, folded and glued to form boxes of various sizes and formats."
+        },
+        {
+          "type": "paragraph",
+          "text": "Feeding; Our belts with patterned top cover provide good grip while not damaging the product."
+        },
+        {
+          "type": "paragraph",
+          "text": "DE stacker. Conveying the cut carton sheets to the next process on narrow belts parallel to each other and with patterned top cover."
+        },
+        {
+          "type": "paragraph",
+          "text": "Die-cutter exit towards the folder. Flat transmission belts or belts with pattern or smooth top cover that offer excellent adherence and abrasion resistance."
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveying by parallel sets of narrow belts with perforation for suction and stacked by round belts."
+        },
+        {
+          "type": "paragraph",
+          "text": "Printing. Belts with longitudinal embossment that prevents the ink from forming a film on the belt top cover which reduces the grip and guarantee a perfect grip."
+        },
+        {
+          "type": "paragraph",
+          "text": "Folder and box presser through flat transmission belts or process belts with thick top cover with high grip to avoid misalignment of the product.  High resistance to abrasion and mechanical wear."
+        },
+        {
+          "type": "heading",
+          "text": "Types of belts according to application:"
+        },
+        {
+          "type": "paragraph",
+          "text": "ASTER 24QF / ASTER 33QF -Inclined conveyors, feeder, de-stacker, printing, folder-gluer."
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Sq_ASTER-24QF_RED.jpg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "ASTER 12G2F / ASTER 20G2F– Inclined conveyors, feeder, feeder-gluer and packer."
+        },
+        {
+          "type": "paragraph",
+          "text": "BREDA 23 / 24 y 33CF – Cutter and folder-gluer."
+        },
+        {
+          "type": "paragraph",
+          "text": "BREDA 12 / 20 / 22 y 25CF – From light (sheet grouping, scrap collection) to heavy applications (multiple stackers, heavy box compressors…)."
+        },
+        {
+          "type": "paragraph",
+          "text": "HIPRO 12Y1R / /18Y1R / 13GR -Folder-gluer and printing lines with high speed up to 400m/min."
+        },
+        {
+          "type": "paragraph",
+          "text": "FEBOR 12CF / 14CF y 15CF – Scrap collection after sheet cutting and down stackers.,"
+        },
+        {
+          "type": "paragraph",
+          "text": "Correas Toptrans EE y EE*/* – Folder-gluer and box presser. ASTER 24QF with longitudinal top cover pattern with high grip."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd :"
+        },
+        {
+          "type": "paragraph",
+          "text": "Elmgrove : Gormanston : County Meath : K32 C925"
+        },
+        {
+          "type": "paragraph",
+          "text": "T: 00353 1800 93 8765"
+        },
+        {
+          "type": "paragraph",
+          "text": "justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "processing",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Soap_banner.jpg",
+          "alt": "Detergents – Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "heading",
+          "text": "Soaps and Detergents Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Wide range of PVC and PU belts for varied applications."
+        },
+        {
+          "type": "paragraph",
+          "text": "White PVC ESPOT 20CC, 30CC."
+        },
+        {
+          "type": "paragraph",
+          "text": "Highly resistant to vegetable oils and fats."
+        },
+        {
+          "type": "paragraph",
+          "text": "Green PVC DRAGO 20CC, 30CC and 30CR."
+        },
+        {
+          "type": "paragraph",
+          "text": "Thick PVC top cover, oil resistant."
+        },
+        {
+          "type": "paragraph",
+          "text": "For trough roller application."
+        },
+        {
+          "type": "paragraph",
+          "text": "For loose pellets and humid, dry or hot powder."
+        },
+        {
+          "type": "paragraph",
+          "text": "White PVC FEBOR 21CC & 31CC."
+        },
+        {
+          "type": "paragraph",
+          "text": "Same as above but added abrasion resistance."
+        },
+        {
+          "type": "paragraph",
+          "text": "For applications where return side has scrapers."
+        },
+        {
+          "type": "paragraph",
+          "text": "White PVC CLINA21CK."
+        },
+        {
+          "type": "paragraph",
+          "text": "Top cover PVC, bottom cover patterned PVC."
+        },
+        {
+          "type": "paragraph",
+          "text": "For troughed conveying and metallic slider bed, e.g. conveying of bar soap."
+        },
+        {
+          "type": "paragraph",
+          "text": "White PVC ASTER 26XC."
+        },
+        {
+          "type": "paragraph",
+          "text": "Thick PVC top cover, oil resistant."
+        },
+        {
+          "type": "paragraph",
+          "text": "For trough roller application."
+        },
+        {
+          "type": "paragraph",
+          "text": "For inclined conveyors."
+        },
+        {
+          "type": "paragraph",
+          "text": "White PU CLINA 10UF, CLINA 12UF, CLINA 20UF."
+        },
+        {
+          "type": "paragraph",
+          "text": "Abrasion and cut resistant."
+        },
+        {
+          "type": "paragraph",
+          "text": "Resistant to chemicals."
+        },
+        {
+          "type": "paragraph",
+          "text": "For straight and dry conveyors."
+        },
+        {
+          "type": "paragraph",
+          "text": "For soap cutters and nitrogen cooling and grinding of detergent powder."
+        },
+        {
+          "type": "paragraph",
+          "text": "Esbelt manufacture different types of belts for conveying detergents depending on the type of soap, whether in pellet, powder or bar form and the type of conveyor and production phase."
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Soap_.jpg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor Belting Detergents"
+        },
+        {
+          "type": "heading",
+          "text": "Looking for a specific belt?"
+        },
+        {
+          "type": "paragraph",
+          "text": "For transporting packed products, we also have a wide variety of belts for the functions needed by the client. Contact us to arrange a site visit and specification of your conveyor belting needs."
+        },
+        {
+          "type": "heading",
+          "text": "Cleaning and Caring for your Conveyor Belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "There are different methods in place for cleaning and caring for your conveyor belt, from steam cleaning to organic and sustainable ph neutral products.  The most important thing to remember is never leave a cleaning substance sitting on your belt, make sure it is washed off within minutes of application.  Always read the manufacturers guidelines before cleaning your conveyor belts.  If you are in any doubt, please contact us and we will help you."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd :"
+        },
+        {
+          "type": "paragraph",
+          "text": "Elmgrove : Gormanston : County Meath : K32 C925"
+        },
+        {
+          "type": "paragraph",
+          "text": "T: 00353 1800 93 8765"
+        },
+        {
+          "type": "paragraph",
+          "text": "justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "waste",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Waste_Banner.jpg",
+          "alt": "Waste – Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "heading",
+          "text": "Esbelt PVC & PU belts double the working life of rubber belts and reduce energy consumption in recycling plants."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our belts last 2 to 5 years, 50% longer than rubber belts under identical conditions."
+        },
+        {
+          "type": "heading",
+          "text": "Benefits of our belts:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Multi-purpose belts, work under adverse conditions."
+        },
+        {
+          "type": "paragraph",
+          "text": "High mechanical resistance to tear and abrasion."
+        },
+        {
+          "type": "paragraph",
+          "text": "Excellent chemical resistance to mineral oils, soaps, solvents and components of organic origin."
+        },
+        {
+          "type": "paragraph",
+          "text": "esbelt belts last between 2 to 5 years which means they last 50% longer than rubber belts."
+        },
+        {
+          "type": "paragraph",
+          "text": "Light but mechanically solid structure. Lower energy consumption during the sorting process."
+        },
+        {
+          "type": "paragraph",
+          "text": "Increase production thanks to the reduction of interruptions during the waste sorting process."
+        },
+        {
+          "type": "paragraph",
+          "text": "Esbelt has a wide range of PVC and PU belts available for the recovery, transfer, classification and separation of all types of wastes."
+        },
+        {
+          "type": "paragraph",
+          "text": "Drago, Breda and Keram, for solid wastes (plastic, carton, metal etc.)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Espot, for organic waste."
+        },
+        {
+          "type": "paragraph",
+          "text": "At the reception or primary conveying of waste material, ESPOTor DRAGObelts are used depending on the type of materials to classify.  Both ESPOTand DRAGO belts meet the ISO 284 anti-static normative, they have flexible weft which allows them to work on trough conveyors.  They also have excellent resistance to tear.  Our ESPOT belts are food grade according to FDA and EU regulations and are resistant to vegetable and animal oils and fats."
+        },
+        {
+          "type": "paragraph",
+          "text": "OurDrago belts are resistant to mineral oils and greases.  In sorting zones where different materials (scrap, thermal materials paper, carton, plastic) are separated, BREDA and KERAM belts are used. For example, Breda 21UFMT-BK is used in optical sorters (for materials from plastic bins) and Keram 40RFis used in the classification of metallic and sharp waste sorting."
+        },
+        {
+          "type": "paragraph",
+          "text": "In the sorting and rejection processes, there is a large number of conveyors working at different levels.  It is necessary to have belts that can work on small pulley diameters to meet the diverse conveyor designs and requirements."
+        },
+        {
+          "type": "paragraph",
+          "text": "Reinforced profiles with high resistance to impacts are used on inclined conveyors at the reception of waste material as well as at the later part of the process.  The profiles are welded by high frequency and maintain a perfect bond with the belt."
+        },
+        {
+          "type": "heading",
+          "text": "Types of belts according to application"
+        },
+        {
+          "type": "paragraph",
+          "text": "BREDA 30CF + reinforced profiles – Primary separation"
+        },
+        {
+          "type": "paragraph",
+          "text": "DRAGO 30AR / 30CR – Transfer of dry and wet residue"
+        },
+        {
+          "type": "paragraph",
+          "text": "BREDA 22UF-TR (BREDA 2017) – Magnetic separators"
+        },
+        {
+          "type": "paragraph",
+          "text": "BREDA 21UFMT-BK – Optical sorters (for materials from plastic container)"
+        },
+        {
+          "type": "paragraph",
+          "text": "KERAM 40RF – Metal/ Sharp waste sorting"
+        },
+        {
+          "type": "paragraph",
+          "text": "ProTech Belting Ireland : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "logistics",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/logistics-banner.jpg",
+          "alt": "Logistics – Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Belts for Logistics and Distribution Centres"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor belts that guarantee a secure transfer of goods"
+        },
+        {
+          "type": "paragraph",
+          "text": "Our standard range of belts offers several options for each type of application."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our belt features:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Anti-static ISO 284"
+        },
+        {
+          "type": "paragraph",
+          "text": "Flame retardant ISO 340"
+        },
+        {
+          "type": "paragraph",
+          "text": "Abrasion resistant"
+        },
+        {
+          "type": "paragraph",
+          "text": "Silent fabric bottom cover for noise reduction"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dimensional stability, good alignment"
+        },
+        {
+          "type": "paragraph",
+          "text": "Strong and durable splice performance"
+        },
+        {
+          "type": "paragraph",
+          "text": "Belts F15NF, F19NF, F22FF, B20FF, A15QF, A15G2F & A15W3F"
+        },
+        {
+          "type": "paragraph",
+          "text": "Logistics and distribution centres are getting bigger and they rely on a large number of conveyors. They require conveyors that can operate with a wide variety of products at different load volumes and to function reliably at full capacity."
+        },
+        {
+          "type": "paragraph",
+          "text": "The FEBOR and ASTER series for logistics and distribution centres easily meet the needs of the sector, compliant with the requirements for handling, conveying and classifying goods. The high quality and reliability of our belts translate into optimum performance, proven by numerous companies in the sector."
+        },
+        {
+          "type": "paragraph",
+          "text": "Some common belting applications"
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/applications-1.jpg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "atex-approved-conveyor-belts",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/ATEX-Banner-1-scaled.jpg",
+          "alt": "ATEX Approved – Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "heading",
+          "text": "ATEX Compliant Belts"
+        },
+        {
+          "type": "heading",
+          "text": "Why?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Atex Approved Conveyor Belts explained, manufactured for the following: –"
+        },
+        {
+          "type": "paragraph",
+          "text": "Suspended combustible particles spread by air at a given concentration can produce an explosion if three main factors are present:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dust of a given size and concentration."
+        },
+        {
+          "type": "paragraph",
+          "text": "Burning agent (oxygen) that produces the combustion process."
+        },
+        {
+          "type": "paragraph",
+          "text": "An ignition point or heat source (sparks from static electricity)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Processes involving dusts, powder, particles therefore are susceptible to the risk of explosions."
+        },
+        {
+          "type": "paragraph",
+          "text": "Esbelt collaborates in preventing the risk of explosions by manufacturing anti-explosive ATEX approved conveyor belts in the ESPOT, DRAGO and FEBOR series."
+        },
+        {
+          "type": "paragraph",
+          "text": "These belts are anti-static in accordance with ISO 284, i.e. they do not accumulate static electricity and facilitate its discharge, preventing sparks that could cause ignition."
+        },
+        {
+          "type": "paragraph",
+          "text": "These belts are certified in accordance with Directive 2014/34/EU as non-electrical components used in equipment for operation in potentially explosive atmospheres and ATEX-Category 2 in accordance with EN13463-5:2011."
+        },
+        {
+          "type": "paragraph",
+          "text": "Suitable for potentially explosive atmospheres with inflammable substances in the form of gases and/or dust. e.g. in bucket elevators, storage silos, refined sugar processing."
+        },
+        {
+          "type": "paragraph",
+          "text": "With preventing aims, the European ATEX Directive applies to components of machinery, such as belting, working in potentially explosive environments.  Explosions may occur in processes with dust, milling, drying, conveyance and storage in silos, most particularly if bucket elevators are involved."
+        },
+        {
+          "type": "paragraph",
+          "text": "Due to this, the Esbelt ATEX certified belts are all of the Espot, Drago and Febor series.  Within the different existing ATEX categories the Esbelt belts are ATEX Category 2, meaning compliance with Directive 94/EC, which applies to non-electrical components of machinery for use in potentially explosive atmospheres."
+        },
+        {
+          "type": "paragraph",
+          "text": "Contact us for more details"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Gormanston : County Meath : K32 C925 : T: 00353 1800 93 8765"
+        },
+        {
+          "type": "paragraph",
+          "text": "M: 00353 (0) 89 474 8666 : sales@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "airport-conveyor-belts",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/03/Airport_banner.jpeg",
+          "alt": "Airports / Logistics – Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd fabricate, supply and fit Esbelt high quality airport conveyor belts; The Esbelt baggage handling conveyor belt range has been manufactured to meet the most stringent regulations in airport safety and operation."
+        },
+        {
+          "type": "heading",
+          "text": "Certification"
+        },
+        {
+          "type": "paragraph",
+          "text": "Low noise polyester fabric, high abrasion resistant PVC, certified antistatic to ISO 284 and flame retardant in accordance with ISO 340 certification."
+        },
+        {
+          "type": "heading",
+          "text": "Lifestyle"
+        },
+        {
+          "type": "paragraph",
+          "text": "As everyday life is changing and slowly getting back to normality, once again our airports will be in full productivity.  PTB Innovation Ltd is part of the long term airport refurbishment and subsequently keeping conveyor belts running smoothly and efficiently."
+        },
+        {
+          "type": "heading",
+          "text": "Manufacturer"
+        },
+        {
+          "type": "paragraph",
+          "text": "PBT Innovation Ltd chose Esbelt as an experienced manufacturer of conveyor belts for material handling; through extensive R&D (Research & Development).  For instance, developed an efficient and proven airport belting range that meets the special requirements of all processes involved in the conveyance of baggage, from check-in, to the carousel at the chosen destination."
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/03/Screenshot-2021-03-29-at-12.47.52.png",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Check-in"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bags are checked for weight, tagged and logged into electronic tracking system.  Rhomboidal profile belt; highly antistatic with excellent grip, prevents wheeled baggage from sliding.  Similarly strong yet flexible carcass is adaptable to small pulley diameters."
+        },
+        {
+          "type": "heading",
+          "text": "Receiving/collector Conveyors"
+        },
+        {
+          "type": "paragraph",
+          "text": "Luggage is set onto row of check-in conveyors ready for collection.  These belts are almost invariably loaded from the side.  A belt with great transversal rigidity, low friction top side and high load capacity, offers excellent tracking and stability.  This is the most crucial belt in any airport and is normally the longest belt in the installation."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd Conveyor Belting for the airport industry."
+        },
+        {
+          "type": "paragraph",
+          "text": "Please see brochure"
+        },
+        {
+          "type": "paragraph",
+          "text": "Airport Conveyor Belt W3"
+        },
+        {
+          "type": "paragraph",
+          "text": "Receiving/Collector Conveyor Belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Inclined/Descending Conveyor Belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Flame Retardant Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Curved Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Certification for conveyor belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Merge Conveyors – Specialised Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Diverter Arm Conveyors"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Gormanston : County Meath : K32 C925 : T: 00353 1800 93 8765"
+        },
+        {
+          "type": "paragraph",
+          "text": "M: 00353 (0) 89 474 8666 : sales@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "transmission",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Leather Transmission Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "For dirty and dusty applications."
+        },
+        {
+          "type": "paragraph",
+          "text": "Leather with nylon fabric surface belts for transmission in two pulley drive systems."
+        },
+        {
+          "type": "paragraph",
+          "text": "Double surface leather belts for multi pulley drive transmission."
+        },
+        {
+          "type": "image",
+          "src": "https://www.esbelt.com/wp-content/uploads/2017/03/01.Correas-de-cuero-1024x685.jpg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "“LL” Leather transmission belts"
+        },
+        {
+          "type": "image",
+          "src": "https://www.esbelt.com/wp-content/uploads/2017/03/02.Correas-de-cuero-1024x683.jpg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Detail of ends prepared for the skived joint: “LL” belt"
+        },
+        {
+          "type": "heading",
+          "text": "Elastomer and Fabric Transmission Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nitrile rubber (NBR) with nylon fabric as process belts in highly abrasive applications as well as paper folding, offset and rotary printing in the graphic sector."
+        },
+        {
+          "type": "paragraph",
+          "text": "Nitrile rubber on both surfaces for cross cutters, feeders and also for box folding in folder-gluer machines."
+        },
+        {
+          "type": "paragraph",
+          "text": "Double-surface carboxilated nitrile rubber (XNBR) tangential belts for transmission in multi pulley drives in the textile industry."
+        },
+        {
+          "type": "paragraph",
+          "text": "Elastomer and nylon fabric surface belts for two-pulley drive transmission."
+        },
+        {
+          "type": "image",
+          "src": "https://www.esbelt.com/wp-content/uploads/2017/03/03.Correas-de-elastomero-1024x678.jpg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "“EF” Elastomer and fabric transmission belt"
+        },
+        {
+          "type": "image",
+          "src": "https://www.esbelt.com/wp-content/uploads/2017/03/05.Correas-elastomero-1024x683.jpg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Detail of ends prepared for the skived joint: “EF” belt"
+        },
+        {
+          "type": "image",
+          "src": "https://www.esbelt.com/wp-content/uploads/2017/03/04.Correa-elastomero-1024x689.jpg",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "ProTech Belting Ireland : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "belts",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "PVC Conveyor Belts; Synthetic Belts have got a fabric base which is coated on the top and bottom with PVC, PU or other plastic materials that consists of one or more layers that ensure strength, stability and cut resistance."
+        },
+        {
+          "type": "paragraph",
+          "text": "Homogeneous Belts used throughout the industries as known for their high strength; wear resistant and impenetrable to water and oils."
+        },
+        {
+          "type": "paragraph",
+          "text": "Metal Conveyor Belts designed for numerous applications and includes tight wire mesh belts which are flexible and suitable for conveying small parts, smooth surface belt for focused and precise transfer or large open belts to facilitate the flow of air/water through a cleaning process."
+        },
+        {
+          "type": "paragraph",
+          "text": "Modular Conveyor Belts commonly used in straight or curved conveyor applications, suitable for horizontal, incline and decline conveyors.  Manufactured from PE, PP and acetal."
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Screenshot-2021-03-29-at-11.24.57.png",
+          "alt": ""
+        },
+        {
+          "type": "paragraph",
+          "text": "Grated Cheese Conveyor Belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd :"
+        },
+        {
+          "type": "paragraph",
+          "text": "Elmgrove : Gormanston : County Meath : K32 C925"
+        },
+        {
+          "type": "paragraph",
+          "text": "T: 00353 1800 93 8765"
+        },
+        {
+          "type": "paragraph",
+          "text": "justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "bakery",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Bakery_Banner1.jpg",
+          "alt": "Bakery – Conveyor Belting post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor belts for bakery & biscuits manufacturing."
+        },
+        {
+          "type": "paragraph",
+          "text": "Knife-edge application, highly resistant to animal and vegetable oils."
+        },
+        {
+          "type": "paragraph",
+          "text": "Easy to clean cover, FDA and EU10/2011 food quality."
+        },
+        {
+          "type": "paragraph",
+          "text": "Laminating and dough conditioning \nThe most suitable belt for this process depends on the level of humidity and oil of the dough:"
+        },
+        {
+          "type": "paragraph",
+          "text": "For sweet and savoury non-oily dough: CLINA or NOVAK PVC belts."
+        },
+        {
+          "type": "paragraph",
+          "text": "For sweet and oily dough: CLINA or NOVAK PU belts."
+        },
+        {
+          "type": "paragraph",
+          "text": "Rotary cutter\nCLINA 10FF is the best belt in the market for this application. It has low adherence and good release of dough, resistant to oils and greases, flexible on knife-edges."
+        },
+        {
+          "type": "paragraph",
+          "text": "The leftover dough is transported on CLINA 09FF or NOVAK 09FF and returned to the laminating machine (CLINA or NOVAK PU belts with one or two plies)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Cooling and packing lines"
+        },
+        {
+          "type": "paragraph",
+          "text": "Biscuit cooling is not induced to avoid altering the biscuit properties.  The cooling line is usually a very long belt (usually between 1.5 to 3 times longer than the oven)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our CLINA and NOVAK PU belts are stable, flexible and resistant to high temperatures, oils and abrasion which are necessary qualities to function correctly in the application."
+        },
+        {
+          "type": "paragraph",
+          "text": "Standard TPU belts in white, blue and ocher."
+        },
+        {
+          "type": "paragraph",
+          "text": "Highly resistant to animal and vegetable oils and fats, no cracks, high level of hygiene."
+        },
+        {
+          "type": "paragraph",
+          "text": "High resistance to abrasión."
+        },
+        {
+          "type": "paragraph",
+          "text": "Above average load capacity but high flexibility for knife edge applications."
+        },
+        {
+          "type": "paragraph",
+          "text": "Both the belt and its raw materials are of FDA and EU 10/2011 food quality ."
+        },
+        {
+          "type": "paragraph",
+          "text": "WITH GLOSSY COVERS"
+        },
+        {
+          "type": "paragraph",
+          "text": "Glossy, smooth, homogeneous, non-porous, easy to clean cover."
+        },
+        {
+          "type": "paragraph",
+          "text": "Low adherent cover for better release of the conveyed product."
+        },
+        {
+          "type": "paragraph",
+          "text": "WITH MATT COVERS"
+        },
+        {
+          "type": "paragraph",
+          "text": "Silk matt, homogenous, non-porous, easy to clean cover."
+        },
+        {
+          "type": "paragraph",
+          "text": "Low adherent cover for a good product transfer and positioning."
+        },
+        {
+          "type": "paragraph",
+          "text": "Premium PU belts in white and blue."
+        },
+        {
+          "type": "paragraph",
+          "text": "Silk matt, homogenous, non-porous, easy to clean cover."
+        },
+        {
+          "type": "paragraph",
+          "text": "Low adherent cover for a good product transfer and positioning."
+        },
+        {
+          "type": "paragraph",
+          "text": "Strong and long lasting antimicrobial & antibiofilms effects (ISO22196)."
+        },
+        {
+          "type": "paragraph",
+          "text": "High resistance to hydrolysis."
+        },
+        {
+          "type": "paragraph",
+          "text": "Wick resistant fabric to enhance hygiene."
+        },
+        {
+          "type": "paragraph",
+          "text": "Above average load capacity but high flexibility for knife edge applications and energy saving."
+        },
+        {
+          "type": "paragraph",
+          "text": "High stability fabrics yield long flexural life."
+        },
+        {
+          "type": "paragraph",
+          "text": "Both the belt and its raw materials are of FDA and EU10/2011 food quality."
+        },
+        {
+          "type": "paragraph",
+          "text": "100% Wool Felt, TUBUL belts or Solid PU conveyor belts."
+        },
+        {
+          "type": "paragraph",
+          "text": "Truly endless, no seam or joint."
+        },
+        {
+          "type": "paragraph",
+          "text": "Non-adherent."
+        },
+        {
+          "type": "paragraph",
+          "text": "Solid PU Conveyor Belts –  To view or download brochure please click here"
+        },
+        {
+          "type": "paragraph",
+          "text": "PDF Flyer"
+        },
+        {
+          "type": "paragraph",
+          "text": "FDA Food Grade conveyor belting Ireland"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd Conveyor Belting for the Bakery Industry."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : +353 1800 93 8765 : justask@ptbltd.ie"
+        }
+      ]
+    },
+    {
+      "slug": "about-us",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/07/Novak_PVC_conveyor_belt-e1634510860378.png",
+          "alt": "About Us post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Suppling Conveyor Belting Ireland; located outside Dublin, PTB Innovation Ltd was established to bring quality conveyor belts into the Irish market place.  We offer a 24/7 onsite fitting service; that keeps our customers production lines running to full capacity.  Understanding that down time costs companies thousands and are set up to make sure that will not happen."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd based in Gormanstown the heart of Ireland."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our aim is to offer a prompt and reliable service, while supplying high quality belting options with competitive prices.  PTB may be young, though our staff have years of experience within the belting industry."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd conveyor belting for the fruit and vegetable, bakery, recycling, confectionery, logistics, packaging and airport industry."
+        },
+        {
+          "type": "paragraph",
+          "text": "We work alongside the leading manufacturers in Europe, together we will provide you with a service like no other."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB pride ourselves on being professional and dependable at the highest level.  Our quality checks and workmanship are based on stringent guidelines; to ensure we provide you with the ultimate customer service."
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor Belting suppliers Ireland – contact us for a quotation."
+        },
+        {
+          "type": "paragraph",
+          "text": "Let us know your application and we can provide you with conveyor belt samples."
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Gormanston : County Meath : K32 C925"
+        },
+        {
+          "type": "paragraph",
+          "text": "T: 00353 1800 93 8765 : justask@ptbltd.ie"
+        },
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/10/My-Post-1.jpg",
+          "alt": "PTB Conveyor Belting Ireland"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd"
+        },
+        {
+          "type": "paragraph",
+          "text": "About Us"
+        },
+        {
+          "type": "paragraph",
+          "text": "Airports / Logistics – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Aster PVC Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "ATEX Approved – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bakery – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bakery – Depanner Belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bakery Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "Belt Accessories"
+        },
+        {
+          "type": "paragraph",
+          "text": "Belt Survey"
+        },
+        {
+          "type": "paragraph",
+          "text": "Breda PVC Conveyor Belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bucket Elevator – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bucket Elevator Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Cart"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ceramic – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Checkout"
+        },
+        {
+          "type": "paragraph",
+          "text": "Chicken Manure Conveyor Belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor Accessories"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor Inspection"
+        },
+        {
+          "type": "paragraph",
+          "text": "Corrugated Boxes – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dairy Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dairy Industry – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Detergents – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Download Section"
+        },
+        {
+          "type": "paragraph",
+          "text": "Drago PVC Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Espot PVC Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Febor PVC Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fruit & Veg – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hipro PVC Conveyor Belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Home"
+        },
+        {
+          "type": "paragraph",
+          "text": "Industries"
+        },
+        {
+          "type": "paragraph",
+          "text": "Logistics – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Meat – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Modular Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Novak PVC Conveyor Belt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pharmaceutical – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Plied Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Poultry Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "Products"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB A5 Flyers"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Bakery Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Confectionery Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Fruit & Vegetable Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Meat Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Recylcing Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "PU Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "PVC Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Shop"
+        },
+        {
+          "type": "paragraph",
+          "text": "Silicone Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Snack Food Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "Solid PU Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Sugar / Confectionery – Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "SuperDrive™"
+        },
+        {
+          "type": "paragraph",
+          "text": "Synthetic Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Teflon Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Timing Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "TPE Conveyor Belting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Transmission"
+        },
+        {
+          "type": "paragraph",
+          "text": "V & Round Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "V & Round Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Vulcanising / Splicing"
+        },
+        {
+          "type": "paragraph",
+          "text": "Wash Flow Conveyor Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Waste – Conveyor Belting"
+        }
+      ]
+    },
+    {
+      "slug": "industries",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://conveyorbelting.ie/wp-content/uploads/2021/03/Bandas-sector-agroalimentario02.jpg",
+          "alt": "Industries post thumbnail image"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor belts in Airports"
+        },
+        {
+          "type": "paragraph",
+          "text": "Atex Approved Belts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor belts in Logistic and Distribution Centres"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor Belts in Waste Sorting & Treatment Plants"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor and Processing Belts in the Detergent Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "Corrugated Box Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "Belts for the Ceramic Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "Belts for Bucket Elevators"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conveyor Belts in the Bakery and Biscuit Industries"
+        },
+        {
+          "type": "paragraph",
+          "text": "Belts for the Fruit & Vegetables Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "Belts for the Sugar Industry"
+        },
+        {
+          "type": "paragraph",
+          "text": "PTB Innovation Ltd : Unit 7, Elmgrove : Gormanston : Co Meath : K32 C925 : T: 00353 (0) 89 474 8666 : justask@ptbltd.ie"
+        }
+      ]
+    }
+  ]
+}

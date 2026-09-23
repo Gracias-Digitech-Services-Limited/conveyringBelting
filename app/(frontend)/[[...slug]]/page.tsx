@@ -3,11 +3,11 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getPayloadClient } from '@/lib/payload'
 import { RichText } from '@/components/RichText'
+import { PageEmbeds } from '@/components/site/PageEmbeds'
 import { HomePage } from '@/components/site/HomePage'
 import { Reveal } from '@/components/site/Reveal'
 import { HoverCard } from '@/components/site/HoverCard'
 import { getNavNodeForSlug, getRelatedNavGroup } from '@/lib/nav'
-import { getIntroText } from '@/lib/richtext'
 import type { Page } from '@/payload-types'
 
 export const revalidate = 60
@@ -18,6 +18,7 @@ async function getPage(slug: string): Promise<Page | null> {
     collection: 'pages',
     where: { slug: { equals: slug }, status: { not_equals: 'private' } },
     limit: 1,
+    depth: 1,
   })
   return (result.docs[0] as Page) ?? null
 }
@@ -51,12 +52,12 @@ export default async function CmsPage({ params }: Args) {
   }
 
   // A "hub" page (Products, Industries, or a nested category like Conveyor Belting or PVC
-  // Conveyor Belting) gets its nav children rendered as a browsable grid instead of the flat
-  // list of sub-page names WordPress used to dump as plain text into the body copy.
+  // Conveyor Belting) additionally gets its nav children rendered as a browsable grid below
+  // its own content, replacing the flat list of sub-page names WordPress used to dump as plain
+  // text into the body copy on some of these pages.
   const navNode = await getNavNodeForSlug(resolvedSlug)
   const isHub = Boolean(navNode?.children?.length)
   const related = isHub ? null : await getRelatedNavGroup(resolvedSlug)
-  const introText = isHub ? getIntroText(page.content) : null
 
   return (
     <article>
@@ -84,37 +85,31 @@ export default async function CmsPage({ params }: Args) {
           </div>
         )}
 
-        {isHub ? (
-          <>
-            {introText && (
-              <Reveal>
-                <p className="max-w-3xl text-lg text-text-muted">{introText}</p>
-              </Reveal>
-            )}
-            <Reveal delay={0.05}>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {navNode!.children!.map((item, i) => (
-                  <Reveal key={item.href} delay={i * 0.03}>
-                    <Link href={item.href} className="block h-full">
-                      <HoverCard className="flex h-full items-center justify-between gap-2 rounded-lg border border-border-subtle bg-card p-5">
-                        <span className="font-medium text-foreground">{item.text}</span>
-                        <span className="shrink-0 text-brand-amber opacity-0 transition-opacity group-hover:opacity-100">
-                          →
-                        </span>
-                      </HoverCard>
-                    </Link>
-                  </Reveal>
-                ))}
-              </div>
-            </Reveal>
-          </>
-        ) : (
-          <Reveal>
-            {page.content ? (
-              <RichText data={page.content} />
-            ) : (
-              !page.needsCopy && <p className="text-text-faint">No content yet.</p>
-            )}
+        <Reveal>
+          {page.content ? (
+            <RichText data={page.content} />
+          ) : (
+            !page.needsCopy && <p className="text-text-faint">No content yet.</p>
+          )}
+          <PageEmbeds embeds={page.embeds} />
+        </Reveal>
+
+        {isHub && (
+          <Reveal delay={0.05}>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {navNode!.children!.map((item, i) => (
+                <Reveal key={item.href} delay={i * 0.03}>
+                  <Link href={item.href} className="block h-full">
+                    <HoverCard className="flex h-full items-center justify-between gap-2 rounded-lg border border-border-subtle bg-card p-5">
+                      <span className="font-medium text-foreground">{item.text}</span>
+                      <span className="shrink-0 text-brand-amber opacity-0 transition-opacity group-hover:opacity-100">
+                        →
+                      </span>
+                    </HoverCard>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
           </Reveal>
         )}
 

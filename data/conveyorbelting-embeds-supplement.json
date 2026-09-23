@@ -1,0 +1,83 @@
+{
+  "_comment": "The official WP REST export (conveyorbelting-all-pages-export.json) only captured plain content_text, which silently dropped the YouTube video and PDF-preview embeds WordPress rendered on these 14 pages. This file restores that parity - each entry was confirmed by fetching the live page's HTML on conveyorbelting.ie and reading its actual <iframe>/wp-block-file embed markup (see the pdfFilename against /media for the matching already-migrated file).",
+  "pages": [
+    {
+      "slug": "bakery-industry",
+      "youtubeVideoId": "Asc5Ybj-0D0",
+      "youtubeTitle": "Bakery - Bread",
+      "pdfFilename": "PTB-Bakery-Trifolder-Volta-Solid-PU-Conveyor-Belt-3.pdf"
+    },
+    {
+      "slug": "bucket-elevator-belts",
+      "youtubeVideoId": "DpkkE-lDw8M",
+      "youtubeTitle": "Volta Belting Hygienic Elevator Conveyor Construction, VERY Easy Belt Assembly",
+      "pdfFilename": "PTB-Bucket-Elevators-Volta-PU-Conveyor-Belts.pdf"
+    },
+    {
+      "slug": "dairy-industry",
+      "youtubeVideoId": "r2PLqn_NNvg",
+      "youtubeTitle": "Food Industry Solutions | Dairy - Conveyor Belts by Volta Belting",
+      "pdfFilename": "PTB-Dairy-Industry.pdf"
+    },
+    {
+      "slug": "postivedrive",
+      "youtubeVideoId": "iKxjruernek",
+      "youtubeTitle": "SuperDrive working under water",
+      "pdfFilename": "PTB-SuperDrive.pdf"
+    },
+    {
+      "slug": "poultry-industry",
+      "youtubeVideoId": "izcktLiAdbc",
+      "youtubeTitle": "Food Industry Solutions | Poultry - Conveyor Belts by Volta Belting",
+      "pdfFilename": "PTB-Poultry-Industry-.pdf"
+    },
+    {
+      "slug": "v-round-belt-profiles",
+      "youtubeVideoId": "a40t-HQLRTM",
+      "youtubeTitle": "Round profiles",
+      "pdfFilename": "PTB-V-Round-Profiles-.pdf"
+    },
+    {
+      "slug": "ptb-recylcing-industry",
+      "youtubeVideoId": "Ko0dfvqlM98",
+      "youtubeTitle": "VOLTA Belting Technology - Recycling Industry",
+      "pdfFilename": "PTB-Innovation-Ltd-Recycling-Industry.pdf"
+    },
+    {
+      "slug": "ptb-meat-industry",
+      "youtubeVideoId": "_rKTq1b_Bm4",
+      "youtubeTitle": "Food Industry Solutions | Meat - Conveyor Belts by Volta Belting",
+      "pdfFilename": "PTB-Innovation-Ltd-Meat-Industry.pdf"
+    },
+    {
+      "slug": "ptb-confectionery-industry",
+      "pdfFilename": "PTB-Innovation-Ltd-Confectionery-Industry.pdf"
+    },
+    {
+      "slug": "ptb-fruit-vegetable-industry",
+      "youtubeVideoId": "JwT7s7_UEh0",
+      "youtubeTitle": "Food Industry Solutions | Vegetables - Conveyor Belts by Volta Belting",
+      "pdfFilename": "PTB-Innovation-Ltd-Fruit-Veg-Industry.pdf"
+    },
+    {
+      "slug": "ptb-bakery-industry",
+      "youtubeVideoId": "DfTGxmDjADU",
+      "youtubeTitle": "Bakery - Dough",
+      "pdfFilename": "PTB-Innovation-Ltd-Bakery-Industry.pdf"
+    },
+    {
+      "slug": "dairy-industry-conveyor-belting",
+      "youtubeVideoId": "r2PLqn_NNvg",
+      "youtubeTitle": "Food Industry Solutions | Dairy - Conveyor Belts by Volta Belting"
+    },
+    {
+      "slug": "fruit-veg",
+      "youtubeVideoId": "_E-PcV0oi70",
+      "youtubeTitle": "Volta SuperDrive"
+    },
+    {
+      "slug": "snack-food-industry",
+      "pdfFilename": "Snack-Food-Industry-ProTech-Belting-Ireland.pdf"
+    }
+  ]
+}

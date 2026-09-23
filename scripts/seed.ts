@@ -14,9 +14,11 @@ import {
   staffCardsData,
   siteSettings as wpSiteSettings,
   decodeWpEntities,
+  embedsBySlug,
+  contentBlocksBySlug,
   type WpMediaItem,
 } from '../lib/wpData'
-import { plainTextToLexical } from '../lib/richtext'
+import { plainTextToLexical, blocksToLexical, type ContentBlock } from '../lib/richtext'
 import { DEFAULT_NAV } from '../lib/nav'
 
 async function upsertMedia(payload: Awaited<ReturnType<typeof getPayload>>, item: WpMediaItem) {
@@ -33,7 +35,7 @@ async function upsertMedia(payload: Awaited<ReturnType<typeof getPayload>>, item
 
   let buffer: Buffer
   try {
-    const res = await fetch(item.source_url)
+    const res = await fetch(item.source_url, { signal: AbortSignal.timeout(20_000) })
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     buffer = Buffer.from(await res.arrayBuffer())
   } catch (err) {
@@ -74,6 +76,76 @@ async function seedMedia(payload: Awaited<ReturnType<typeof getPayload>>) {
   return map
 }
 
+/**
+ * Resolves a media filename (from the embeds/content-images supplements) to its Payload doc id,
+ * if migrated. Matches against `sourceUrl` rather than the stored `filename` - Payload silently
+ * renames an upload on disk (e.g. `-3.pdf` -> `-4.pdf`) when a file of that name already exists,
+ * which would otherwise cause an exact filename match to miss it. sourceUrl is never touched.
+ *
+ * `contains` alone isn't enough: "SuperDrive.png" is a substring of "Mini-SuperDrive.png", so a
+ * loose match can silently resolve to the wrong file. Fetch candidates, then require the
+ * sourceUrl's own basename to equal the target exactly.
+ */
+async function findMediaIdByFilename(
+  payload: Awaited<ReturnType<typeof getPayload>>,
+  filename: string,
+): Promise<string | null> {
+  // WordPress serves auto-generated resized variants inline (e.g. `-1024x742` before the
+  // extension) that aren't separate media-library items - strip that suffix before matching.
+  const deSized = filename.replace(/-\d+x\d+(\.\w+)$/, '$1')
+
+  for (const candidate of [filename, deSized]) {
+    const result = await payload.find({
+      collection: 'media',
+      where: { sourceUrl: { contains: candidate } },
+      limit: 20,
+    })
+    const exact = result.docs.find((d) => {
+      const url = d.sourceUrl as string | undefined
+      return url && decodeURIComponent(url.split('/').pop() || '') === candidate
+    })
+    if (exact) return exact.id as string
+  }
+  return null
+}
+
+/**
+ * A handful of content-images-supplement blocks point at a third-party supplier's own site
+ * (e.g. esbelt.com) rather than conveyorbelting.ie's own WordPress media library - the live
+ * page hotlinks them directly. To keep every image on the migrated site self-hosted (no
+ * dependency on an external domain staying up), download and store a copy in our own `media`
+ * collection instead of hotlinking. Idempotent: re-checks by sourceUrl before creating.
+ */
+async function importExternalImage(
+  payload: Awaited<ReturnType<typeof getPayload>>,
+  src: string,
+  alt: string,
+): Promise<string | null> {
+  const existing = await payload.find({
+    collection: 'media',
+    where: { sourceUrl: { equals: src } },
+    limit: 1,
+  })
+  if (existing.docs[0]) return existing.docs[0].id as string
+
+  const filename = decodeURIComponent(src.split('/').pop() || 'external-image.jpg')
+  try {
+    const res = await fetch(src, { signal: AbortSignal.timeout(20_000) })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const buffer = Buffer.from(await res.arrayBuffer())
+    const mimetype = res.headers.get('content-type') || 'image/jpeg'
+    const created = await payload.create({
+      collection: 'media',
+      data: { alt, sourceUrl: src },
+      file: { data: buffer, mimetype, name: filename, size: buffer.byteLength },
+    })
+    return created.id as string
+  } catch (err) {
+    console.warn(`  ⚠ could not import external image ${src} (${(err as Error).message})`)
+    return null
+  }
+}
+
 async function seedPages(payload: Awaited<ReturnType<typeof getPayload>>) {
   const items = getAllContentWithResolvedSlugs()
   console.log(`\nSeeding ${items.length} pages/posts...`)
@@ -81,6 +153,8 @@ async function seedPages(payload: Awaited<ReturnType<typeof getPayload>>) {
   const needsCopy: string[] = []
   let created = 0
   let updated = 0
+  let embedsAttached = 0
+  let imagesRestored = 0
 
   for (const item of items) {
     const existing = await payload.find({
@@ -93,12 +167,55 @@ async function seedPages(payload: Awaited<ReturnType<typeof getPayload>>) {
     const contentIsEmpty = !item.content_text?.trim()
     if (contentIsEmpty) needsCopy.push(`${title} (/${item.resolvedSlug})`)
 
+    const embedInfo = embedsBySlug.get(item.resolvedSlug)
+    let embeds: { youtubeVideoId?: string; youtubeTitle?: string; pdfAttachment?: string } | undefined
+    if (embedInfo) {
+      const pdfId = embedInfo.pdfFilename
+        ? await findMediaIdByFilename(payload, embedInfo.pdfFilename)
+        : null
+      embeds = {
+        youtubeVideoId: embedInfo.youtubeVideoId,
+        youtubeTitle: embedInfo.youtubeTitle,
+        ...(pdfId ? { pdfAttachment: pdfId } : {}),
+      }
+      embedsAttached++
+    }
+
+    // A handful of pages have their live body content interleaved with real photos - restored
+    // as a proper block sequence (see data/conveyorbelting-content-images-supplement.json)
+    // rather than plainTextToLexical's blank-line guessing, which has no concept of images.
+    const contentBlocks = contentBlocksBySlug.get(item.resolvedSlug)
+    let content = plainTextToLexical(item.content_text)
+    if (contentBlocks) {
+      const resolved: ContentBlock[] = []
+      for (const b of contentBlocks) {
+        if (b.type === 'image' && b.src) {
+          // Some images are served through WordPress's Jetpack "Photon" CDN proxy
+          // (i0/i1/i2.wp.com/<original-host>/<path>?ssl=1) - the file itself is still the same
+          // conveyorbelting.ie upload, just wrapped with a query string that would otherwise
+          // break filename matching.
+          const cleanSrc = b.src.split('?')[0]
+          const filename = cleanSrc.split('/').pop()
+          let mediaId = filename ? await findMediaIdByFilename(payload, filename) : null
+          if (!mediaId && !cleanSrc.includes('conveyorbelting.ie')) {
+            mediaId = await importExternalImage(payload, cleanSrc, b.alt || '')
+          }
+          if (mediaId) resolved.push({ type: 'image', mediaId })
+        } else if (b.type !== 'image') {
+          resolved.push({ type: b.type, text: b.text })
+        }
+      }
+      content = blocksToLexical(resolved)
+      imagesRestored++
+    }
+
     const data = {
       title,
       slug: item.resolvedSlug,
       status: item.status,
       needsCopy: contentIsEmpty,
-      content: plainTextToLexical(item.content_text),
+      content,
+      ...(embeds ? { embeds } : {}),
       seo: {
         metaTitle: title,
         metaDescription: decodeWpEntities(item.excerpt_text || '').slice(0, 160),
@@ -132,7 +249,9 @@ async function seedPages(payload: Awaited<ReturnType<typeof getPayload>>) {
     }
   }
 
-  console.log(`Pages done: ${created} created, ${updated} updated.`)
+  console.log(
+    `Pages done: ${created} created, ${updated} updated, ${embedsAttached} with embeds restored, ${imagesRestored} with inline images restored.`,
+  )
   if (needsCopy.length) {
     console.log(`\n${needsCopy.length} page(s) need new copy written (empty in the WP export):`)
     needsCopy.forEach((p) => console.log(`  - ${p}`))

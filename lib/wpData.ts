@@ -1,6 +1,8 @@
 import allPagesExport from '../data/conveyorbelting-all-pages-export.json'
 import siteAssetsExport from '../data/conveyorbelting-site-assets-export.json'
 import qrFormsExport from '../data/conveyorbelting-qrcards-forms-export.json'
+import embedsSupplement from '../data/conveyorbelting-embeds-supplement.json'
+import contentImagesSupplement from '../data/conveyorbelting-content-images-supplement.json'
 
 export type WpStatus = 'publish' | 'draft' | 'private'
 
@@ -58,6 +60,33 @@ export const siteSettings = siteAssetsExport.site_settings as Record<string, unk
 export const navMenus = siteAssetsExport.nav_menus as { index: number; id: string; class: string; links: NavLink[] }[]
 export const staffCardsData = qrFormsExport.qr_business_cards as WpQrCard[]
 export const contactFormSchema = qrFormsExport.contact_forms
+
+export interface WpEmbedSupplement {
+  slug: string
+  youtubeVideoId?: string
+  youtubeTitle?: string
+  pdfFilename?: string
+}
+
+export const embedsBySlug: Map<string, WpEmbedSupplement> = new Map(
+  (embedsSupplement.pages as WpEmbedSupplement[]).map((e) => [e.slug, e]),
+)
+
+export interface WpContentBlock {
+  type: 'paragraph' | 'heading' | 'image'
+  text?: string
+  src?: string
+  alt?: string
+}
+
+export interface WpContentImagesSupplement {
+  slug: string
+  blocks: WpContentBlock[]
+}
+
+export const contentBlocksBySlug: Map<string, WpContentBlock[]> = new Map(
+  (contentImagesSupplement.pages as WpContentImagesSupplement[]).map((p) => [p.slug, p.blocks]),
+)
 
 /** Slugify a title into a URL-safe segment (used only as a fallback when the WP slug was empty). */
 export function slugify(input: string): string {
