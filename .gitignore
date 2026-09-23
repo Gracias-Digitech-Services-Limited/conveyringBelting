@@ -20,6 +20,9 @@
 /.next/
 /out/
 
+# Payload local disk media storage - files now live in Cloudflare R2, not the repo
+/media/
+
 # production
 /build
 

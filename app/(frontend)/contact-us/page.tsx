@@ -2,9 +2,11 @@ import type { Metadata } from 'next'
 import { ContactForm } from '@/components/site/ContactForm'
 import { getSiteSettings } from '@/lib/siteSettings'
 
-// Revalidate periodically rather than baking the DB read in at build time - Site Settings
-// (contact info, intro copy) is admin-editable and should show up without a full rebuild.
-export const revalidate = 60
+// Render at request time rather than prerendering at build - the build step (e.g. on Vercel,
+// if DATABASE_URI isn't configured there) may not have DB access, which would otherwise fail
+// the whole deploy. See sitemap.ts for the same fix. Site Settings are admin-editable and
+// should show up immediately without a rebuild anyway.
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Contact Us',

@@ -47,7 +47,11 @@ export default buildConfig({
             },
             bucket: process.env.S3_BUCKET || '',
             config: {
-              region: process.env.S3_REGION,
+              region: process.env.S3_REGION || 'auto',
+              // Cloudflare R2 is S3-compatible but needs its own endpoint (unlike real AWS S3,
+              // which infers it from the region) and path-style URLs.
+              ...(process.env.S3_ENDPOINT ? { endpoint: process.env.S3_ENDPOINT } : {}),
+              forcePathStyle: true,
               credentials: {
                 accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
                 secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
