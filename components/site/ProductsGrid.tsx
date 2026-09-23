@@ -14,30 +14,21 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' } },
 }
 
-function getProductImage(text: string): string | null {
-  const lower = text.toLowerCase()
-  if (
-    lower.includes('conveyor belt') &&
-    !lower.includes('pvc') &&
-    !lower.includes('pu') &&
-    !lower.includes('modular') &&
-    !lower.includes('timing') &&
-    !lower.includes('silicone')
-  ) {
-    return '/api/media/file/cropped-Egg-collection-woven-conveyor-belt-ireland-scaled-1.jpeg'
-  }
-  if (lower.includes('solid pu') || lower.includes('depanner') || lower.includes('suction')) {
-    return '/api/media/file/Depanner-Belt-Metal-Detectable-Suction-Cups-scaled.jpg'
-  }
-  if (
-    lower.includes('accessor') ||
-    lower.includes('fastener') ||
-    lower.includes('clipper') ||
-    lower.includes('alligator')
-  ) {
-    return '/api/media/file/Suction-Cup-Metal-Detectable-Depanner-Belt.jpg'
-  }
-  return null
+/**
+ * Real photos exist only for categories confirmed against the live site's own page content
+ * (e.g. the /solid-pu page text names the SuperDrive belt, the /tpe-conveyor-belting page is
+ * literally about Thermoplastic Polyester). Everything else falls back to GradientCard rather
+ * than guessing - the live site's own category banners turned out to be random on every page
+ * load, so there's no real per-category photo to copy for the rest.
+ */
+const PRODUCT_IMAGES: Record<string, string> = {
+  '/solid-pu': '/api/media/file/SuperDrive.jpg',
+  '/tpe-conveyor-belting': '/api/media/file/Thermoplastic_Polyester_TPE-scaled.jpg',
+  '/belt-accessories': '/api/media/file/Alligator®-Lacing-Fasteners-PTB.jpg',
+}
+
+function getProductImage(href: string): string | null {
+  return PRODUCT_IMAGES[href] ?? null
 }
 
 function GradientCard({ text }: { text: string }) {
@@ -98,7 +89,7 @@ export function ProductsGrid({ products }: { products: NavNode[] }) {
       className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4"
     >
       {products.map((item) => {
-        const img = getProductImage(item.text)
+        const img = getProductImage(item.href)
         return (
           <motion.div key={item.href} variants={itemVariants}>
             <Link
