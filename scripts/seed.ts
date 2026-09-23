@@ -35,7 +35,7 @@ async function upsertMedia(payload: Awaited<ReturnType<typeof getPayload>>, item
 
   let buffer: Buffer
   try {
-    const res = await fetch(item.source_url, { signal: AbortSignal.timeout(20_000) })
+    const res = await fetch(item.source_url, { signal: AbortSignal.timeout(60_000) })
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     buffer = Buffer.from(await res.arrayBuffer())
   } catch (err) {
@@ -130,7 +130,7 @@ async function importExternalImage(
 
   const filename = decodeURIComponent(src.split('/').pop() || 'external-image.jpg')
   try {
-    const res = await fetch(src, { signal: AbortSignal.timeout(20_000) })
+    const res = await fetch(src, { signal: AbortSignal.timeout(60_000) })
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const buffer = Buffer.from(await res.arrayBuffer())
     const mimetype = res.headers.get('content-type') || 'image/jpeg'
