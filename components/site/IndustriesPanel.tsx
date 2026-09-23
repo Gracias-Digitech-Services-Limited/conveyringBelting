@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { NavNode } from '@/lib/nav'
+import { mediaFileUrl } from '@/lib/media'
 
 /**
  * Real photos exist only for the industries that have a genuine dedicated banner in the media
@@ -13,23 +14,24 @@ import type { NavNode } from '@/lib/nav'
  * real per-industry image to copy for the remainder.
  */
 const INDUSTRY_IMAGES: Record<string, string> = {
-  '/airport-conveyor-belts': '/api/media/file/Airport_banner.jpeg',
-  '/atex-approved-conveyor-belts': '/api/media/file/ATEX-Banner-1-scaled.jpg',
-  '/bakery': '/api/media/file/Bakery_Banner1.jpg',
-  '/bucket-elevators': '/api/media/file/bucket-elevator-banner.jpg',
-  '/ceramic': '/api/media/file/Ceramic_Banner.jpg',
-  '/chicken-manure-conveyor-belt': '/api/media/file/Chicken-Manure-Conveyor-Belt-scaled.jpg',
-  '/corrugated': '/api/media/file/Corrigated_Banner.jpg',
-  '/dairy-industry-conveyor-belting': '/api/media/file/Dairy_437-scaled.jpg',
-  '/processing': '/api/media/file/Soap_banner.jpg',
-  '/fruit-veg': '/api/media/file/Fruit_veg_banner2.jpg',
-  '/logistics': '/api/media/file/logistics-banner.jpg',
-  '/sugar': '/api/media/file/Sugar_banner.jpg',
-  '/waste': '/api/media/file/Waste_Banner.jpg',
+  '/airport-conveyor-belts': 'Airport_banner.jpeg',
+  '/atex-approved-conveyor-belts': 'ATEX-Banner-1-scaled.jpg',
+  '/bakery': 'Bakery_Banner1.jpg',
+  '/bucket-elevators': 'bucket-elevator-banner.jpg',
+  '/ceramic': 'Ceramic_Banner.jpg',
+  '/chicken-manure-conveyor-belt': 'Chicken-Manure-Conveyor-Belt-scaled.jpg',
+  '/corrugated': 'Corrigated_Banner.jpg',
+  '/dairy-industry-conveyor-belting': 'Dairy_437-scaled.jpg',
+  '/processing': 'Soap_banner.jpg',
+  '/fruit-veg': 'Fruit_veg_banner2.jpg',
+  '/logistics': 'logistics-banner.jpg',
+  '/sugar': 'Sugar_banner.jpg',
+  '/waste': 'Waste_Banner.jpg',
 }
 
 function getImage(href: string): string | null {
-  return INDUSTRY_IMAGES[href] ?? null
+  const filename = INDUSTRY_IMAGES[href]
+  return filename ? mediaFileUrl(filename) : null
 }
 
 function HeroFallback({ text }: { text: string }) {

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { SiteSetting } from '@/payload-types'
+import { mediaFileUrl } from '@/lib/media'
 
 export function Footer({
   siteTitle,
@@ -49,7 +50,7 @@ export function Footer({
             <div className="flex shrink-0 items-center rounded bg-white px-2.5 py-1 shadow-sm">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/api/media/file/PTB-Monogram.png"
+                src={mediaFileUrl('PTB-Monogram.png')}
                 alt="ProTech Belting Ireland"
                 className="h-7 w-auto object-contain"
               />

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Page } from '@/payload-types'
 import { extractTextSections, isBoilerplateAddress } from '@/lib/richtext'
 import { getIndustryTopLevel, getProductTopLevel } from '@/lib/nav'
+import { mediaFileUrl } from '@/lib/media'
 import { getSiteSettings } from '@/lib/siteSettings'
 import { Reveal } from './Reveal'
 import { IndustriesPanel } from './IndustriesPanel'
@@ -102,7 +103,7 @@ export async function HomePage({ page }: { page: Page }) {
       <section className="relative overflow-hidden">
 
         {/* Real conveyor belt photo — parallax via client component */}
-        <HeroParallax src="/api/media/file/cropped-Egg-collection-woven-conveyor-belt-ireland-scaled-1.jpeg" />
+        <HeroParallax src={mediaFileUrl('cropped-Egg-collection-woven-conveyor-belt-ireland-scaled-1.jpeg')} />
 
         {/* Atmospheric overlay — semi-transparent so photo shows through */}
         <div
@@ -312,7 +313,7 @@ export async function HomePage({ page }: { page: Page }) {
                 <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/api/media/file/cropped-Egg-collection-woven-conveyor-belt-ireland-scaled-1.jpeg"
+                    src={mediaFileUrl('cropped-Egg-collection-woven-conveyor-belt-ireland-scaled-1.jpeg')}
                     alt="Conveyor belt in food processing facility"
                     loading="lazy"
                     className="h-full w-full object-cover"

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import type { NavNode } from '@/lib/nav'
+import { mediaFileUrl } from '@/lib/media'
 import { ThemeToggle } from './ThemeToggle'
 import { DesktopSubmenu } from './DesktopSubmenu'
 import { MobileNavItem } from './MobileNavItem'
@@ -36,7 +37,7 @@ export function Header({ nav, siteTitle }: { nav: NavNode[]; siteTitle: string }
           <div className="flex shrink-0 items-center rounded bg-white px-2.5 py-1 shadow-sm">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/api/media/file/PTB-Monogram.png"
+              src={mediaFileUrl('PTB-Monogram.png')}
               alt="ProTech Belting Ireland"
               className="h-8 w-auto object-contain"
             />

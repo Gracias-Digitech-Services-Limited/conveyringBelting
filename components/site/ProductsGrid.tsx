@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion, type Variants } from 'framer-motion'
 import type { NavNode } from '@/lib/nav'
+import { mediaFileUrl } from '@/lib/media'
 
 const containerVariants: Variants = {
   hidden: {},
@@ -22,13 +23,14 @@ const itemVariants: Variants = {
  * load, so there's no real per-category photo to copy for the rest.
  */
 const PRODUCT_IMAGES: Record<string, string> = {
-  '/solid-pu': '/api/media/file/SuperDrive.jpg',
-  '/tpe-conveyor-belting': '/api/media/file/Thermoplastic_Polyester_TPE-scaled.jpg',
-  '/belt-accessories': '/api/media/file/Alligator®-Lacing-Fasteners-PTB.jpg',
+  '/solid-pu': 'SuperDrive.jpg',
+  '/tpe-conveyor-belting': 'Thermoplastic_Polyester_TPE-scaled.jpg',
+  '/belt-accessories': 'Alligator®-Lacing-Fasteners-PTB.jpg',
 }
 
 function getProductImage(href: string): string | null {
-  return PRODUCT_IMAGES[href] ?? null
+  const filename = PRODUCT_IMAGES[href]
+  return filename ? mediaFileUrl(filename) : null
 }
 
 function GradientCard({ text }: { text: string }) {
