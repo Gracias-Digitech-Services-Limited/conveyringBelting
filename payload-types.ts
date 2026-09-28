@@ -261,7 +261,7 @@ export interface StaffCard {
   createdAt: string;
 }
 /**
- * Messages sent through the website contact form. A copy is also emailed to you.
+ * Messages sent through the website contact form - every enquiry is saved here.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "contact-submissions".
