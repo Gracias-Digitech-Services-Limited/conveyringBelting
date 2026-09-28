@@ -431,6 +431,7 @@ test.describe('Enquiries', () => {
 
 test.describe.serial('Editor role (WordPress-style permissions)', () => {
   const email = `pw-editor-${RUN}@example.com`
+  const username = `pweditor${RUN}`
   const password = `pw-${RUN}-Editor!`
   let editorId = ''
 
@@ -438,7 +439,7 @@ test.describe.serial('Editor role (WordPress-style permissions)', () => {
     await withAdmin(browser, async (page) => {
       const res = await api(page, '/api/users', {
         method: 'POST',
-        body: { email, password, name: 'PW Editor', role: 'editor' },
+        body: { email, username, password, name: 'PW Editor', role: 'editor' },
       })
       expect(res.status, 'creating the test editor').toBe(201)
       editorId = res.json.doc.id
@@ -461,6 +462,17 @@ test.describe.serial('Editor role (WordPress-style permissions)', () => {
     await expect(page.getByRole('heading', { name: /welcome back/i })).toBeVisible({ timeout: 15_000 })
     return { context, page }
   }
+
+  test('can log in with a username instead of an email', async ({ browser }) => {
+    const context = await browser.newContext({ baseURL: BASE_URL, storageState: { cookies: [], origins: [] } })
+    const page = await context.newPage()
+    await page.goto('/admin/login')
+    await page.getByLabel(/email or username/i).fill(username)
+    await page.getByLabel('Password').fill(password)
+    await page.getByRole('button', { name: /login/i }).click()
+    await expect(page.getByRole('heading', { name: /welcome back/i })).toBeVisible({ timeout: 15_000 })
+    await context.close()
+  })
 
   test('can log in and manage pages', async ({ browser }) => {
     const { context, page } = await loginAsEditor(browser)

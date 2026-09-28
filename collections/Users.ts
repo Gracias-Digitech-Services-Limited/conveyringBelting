@@ -11,7 +11,15 @@ export const Users: CollectionConfig = {
     hideAPIURL: true,
     description: 'People who can log in to edit the website.',
   },
-  auth: true,
+  auth: {
+    // Log in with either a short username (e.g. "conveyoradmin") or the email address.
+    // Username stays optional so existing email-only accounts keep working.
+    loginWithUsername: {
+      allowEmailLogin: true,
+      requireEmail: true,
+      requireUsername: false,
+    },
+  },
   access: {
     // WordPress-style roles: only Administrators manage the user list, but - same as WP -
     // any logged-in user can still see/update their own profile.
