@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getStaffCardBySlug, mediaUrl } from '@/lib/staffCards'
 import { QrCanvas } from '@/components/site/QrCanvas'
+import { SERVER_URL } from '@/lib/serverUrl'
 
 type Args = { params: Promise<{ slug: string }> }
 
@@ -21,7 +22,7 @@ export default async function StaffCardPage({ params }: Args) {
   const photoUrl = mediaUrl(card.photo)
   const logoUrl = mediaUrl(card.logo)
   const vCardUrl = `/card/${card.slug}/vcard`
-  const cardPageUrl = `${process.env.NEXT_PUBLIC_SERVER_URL ?? ''}/card/${card.slug}`
+  const cardPageUrl = `${SERVER_URL ?? ''}/card/${card.slug}`
 
   return (
     <div className="mx-auto flex max-w-md flex-col items-center px-4 py-16 text-center">

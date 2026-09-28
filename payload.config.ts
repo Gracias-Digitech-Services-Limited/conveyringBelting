@@ -12,6 +12,7 @@ import { StaffCards } from './collections/StaffCards'
 import { ContactSubmissions } from './collections/ContactSubmissions'
 import { Navigation } from './globals/Navigation'
 import { SiteSettings } from './globals/SiteSettings'
+import { SERVER_URL } from './lib/serverUrl'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -19,7 +20,7 @@ const dirname = path.dirname(filename)
 const useS3 = Boolean(process.env.S3_BUCKET)
 
 export default buildConfig({
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
+  serverURL: SERVER_URL,
   admin: {
     user: Users.slug,
     theme: 'light',

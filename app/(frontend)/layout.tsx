@@ -8,6 +8,7 @@ import { Footer } from '@/components/site/Footer'
 import { BackToTop } from '@/components/site/BackToTop'
 import { getHeaderNav } from '@/lib/nav'
 import { getSiteSettings } from '@/lib/siteSettings'
+import { SERVER_URL } from '@/lib/serverUrl'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
@@ -17,9 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: { default: settings.siteTitle, template: `%s | ${settings.siteTitle}` },
     description: settings.tagline ?? undefined,
-    metadataBase: process.env.NEXT_PUBLIC_SERVER_URL
-      ? new URL(process.env.NEXT_PUBLIC_SERVER_URL)
-      : undefined,
+    metadataBase: SERVER_URL ? new URL(SERVER_URL) : undefined,
   }
 }
 

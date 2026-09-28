@@ -7,10 +7,12 @@ import { mediaFileUrl } from '@/lib/media'
  */
 export function AdminLogo() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+    // Stacked rather than side by side: the wordmark is ~5:1, so a row layout squeezed the
+    // site name into wrapping onto two lines.
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, textAlign: 'center' }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={mediaFileUrl('PTB-Monogram.png')} alt="" style={{ height: 48, width: 'auto' }} />
-      <div style={{ lineHeight: 1.2 }}>
+      <img src={mediaFileUrl('PTB-Monogram.png')} alt="" style={{ height: 56, width: 'auto', maxWidth: '100%' }} />
+      <div style={{ lineHeight: 1.3 }}>
         <div style={{ fontSize: 22, fontWeight: 700 }}>Conveyor Belting Ireland</div>
         <div style={{ fontSize: 13, opacity: 0.6 }}>Website editor</div>
       </div>
@@ -20,7 +22,9 @@ export function AdminLogo() {
 
 export function AdminIcon() {
   return (
+    // Sized in app/(payload)/custom.css: fills the breadcrumb's fixed-height home slot, with the
+    // width following the wordmark's ~5:1 shape instead of Payload's square icon box.
     // eslint-disable-next-line @next/next/no-img-element
-    <img src={mediaFileUrl('PTB-Monogram.png')} alt="Home" style={{ height: 22, width: 'auto' }} />
+    <img src={mediaFileUrl('PTB-Monogram.png')} alt="Home" />
   )
 }

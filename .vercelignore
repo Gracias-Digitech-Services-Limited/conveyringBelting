@@ -1,0 +1,13 @@
+# Files `vercel` CLI deploys must not upload. Vercel installs and builds itself, and production
+# env vars come from the Vercel dashboard - never from a local .env (secrets + local DB URL).
+node_modules
+.next
+.env
+.env.*
+media
+playwright
+playwright-report
+test-results
+dev.log
+.claude
+*.tsbuildinfo

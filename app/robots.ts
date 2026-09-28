@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next'
+import { SERVER_URL } from '@/lib/serverUrl'
 
 export default function robots(): MetadataRoute.Robots {
-  const base = process.env.NEXT_PUBLIC_SERVER_URL ?? 'https://conveyorbelting.ie'
+  const base = SERVER_URL ?? 'https://conveyorbelting.ie'
 
   return {
     rules: [{ userAgent: '*', allow: '/', disallow: ['/admin', '/api'] }],

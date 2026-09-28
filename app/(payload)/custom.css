@@ -1,0 +1,22 @@
+/*
+ * Admin panel overrides. Payload's styles live in @layer payload-default, so these un-layered
+ * rules win without needing !important.
+ */
+
+/* The brand mark (components/admin/Branding.tsx) is a wide "PTB" wordmark, not a square icon -
+ * let the breadcrumb home link size to it instead of Payload's fixed 18x18 box, which squashed
+ * the logo down to an unreadable blob. */
+.step-nav__home {
+  width: auto;
+}
+/* Payload wraps the icon in a bare <span>, so it needs a height for the image to fill. */
+.step-nav__home > span {
+  display: block;
+  height: 100%;
+}
+.step-nav__home img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
