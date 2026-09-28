@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'conveyorbelting.ie' },
       { protocol: 'https', hostname: '*.s3.*.amazonaws.com' },
+      // Cloudflare R2's public dev domain (media is served straight from here, not proxied -
+      // see payload.config.ts's generateFileURL) - wildcarded since the `pub-<hash>` subdomain
+      // is bucket-specific and would change if the R2 bucket is ever recreated.
+      { protocol: 'https', hostname: '*.r2.dev' },
     ],
   },
   async redirects() {
