@@ -67,11 +67,11 @@ export interface Config {
   };
   blocks: {};
   collections: {
-    users: User;
     pages: Page;
     media: Media;
     'staff-cards': StaffCard;
     'contact-submissions': ContactSubmission;
+    users: User;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -79,11 +79,11 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
-    users: UsersSelect<false> | UsersSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'staff-cards': StaffCardsSelect<false> | StaffCardsSelect<true>;
     'contact-submissions': ContactSubmissionsSelect<false> | ContactSubmissionsSelect<true>;
+    users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -130,33 +130,8 @@ export interface UserAuthOperations {
   };
 }
 /**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users".
- */
-export interface User {
-  id: string;
-  name?: string | null;
-  role: 'admin' | 'editor';
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  sessions?:
-    | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
-      }[]
-    | null;
-  password?: string | null;
-  collection: 'users';
-}
-/**
+ * The pages of your website - text, images, videos and how each appears in Google.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages".
  */
@@ -164,16 +139,19 @@ export interface Page {
   id: string;
   title: string;
   /**
-   * URL path segment, e.g. "bakery-industry" for /bakery-industry
+   * The end of the web address, e.g. "bakery-industry" for /bakery-industry. Changing this breaks existing links.
    */
   slug: string;
   /**
-   * Optional parent page, used for breadcrumbs / nested paths.
+   * Only Published pages appear on the website.
    */
-  parent?: (string | null) | Page;
   status: 'publish' | 'draft' | 'private';
   /**
-   * Flagged during migration - this page had no content in the old WordPress export and needs new copy written.
+   * Optional - the page this one sits under, for breadcrumbs.
+   */
+  parent?: (string | null) | Page;
+  /**
+   * Tick if this page still needs its text written - it shows a placeholder on the website until then.
    */
   needsCopy?: boolean | null;
   content?: {
@@ -192,20 +170,29 @@ export interface Page {
     [k: string]: unknown;
   } | null;
   /**
-   * YouTube video / PDF embeds carried over from the live site - the plain-text WordPress export dropped these, so they are restored separately (see data/conveyorbelting-embeds-supplement.json).
+   * Optional - a YouTube video and/or a PDF shown below the page text.
    */
   embeds?: {
+    /**
+     * The part after "v=" in the YouTube link, e.g. dQw4w9WgXcQ
+     */
     youtubeVideoId?: string | null;
     youtubeTitle?: string | null;
     pdfAttachment?: (string | null) | Media;
   };
+  /**
+   * How this page appears in Google search results. Leave blank to use the page title.
+   */
   seo?: {
+    /**
+     * Around 50-60 characters.
+     */
     metaTitle?: string | null;
+    /**
+     * Around 150-160 characters.
+     */
     metaDescription?: string | null;
   };
-  /**
-   * Read-only metadata carried over from the WordPress export, kept for redirect and audit purposes.
-   */
   migration?: {
     wpId?: number | null;
     legacyUrl?: string | null;
@@ -217,23 +204,19 @@ export interface Page {
   _status?: ('draft' | 'published') | null;
 }
 /**
+ * Photos, PDFs and videos used across the website. Upload once, then pick them on any page.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
   id: string;
   /**
-   * Alt text carried over from the WordPress media library - used for accessibility and SEO.
+   * Describe the image in a few words (e.g. "PVC conveyor belt on a bakery line"). Helps Google and visitors using screen readers.
    */
   alt?: string | null;
   caption?: string | null;
-  /**
-   * Original WordPress attachment ID (used to re-link content during migration).
-   */
   wpId?: number | null;
-  /**
-   * Original WordPress source URL this file was migrated from.
-   */
   sourceUrl?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -248,6 +231,8 @@ export interface Media {
   focalY?: number | null;
 }
 /**
+ * Digital business cards - each one gets its own web link and QR code to share.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "staff-cards".
  */
@@ -280,6 +265,8 @@ export interface StaffCard {
   createdAt: string;
 }
 /**
+ * Messages sent through the website contact form. A copy is also emailed to you.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "contact-submissions".
  */
@@ -292,6 +279,35 @@ export interface ContactSubmission {
   message?: string | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * People who can log in to edit the website.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users".
+ */
+export interface User {
+  id: string;
+  name?: string | null;
+  role: 'admin' | 'editor';
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+  collection: 'users';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -318,10 +334,6 @@ export interface PayloadLockedDocument {
   id: string;
   document?:
     | ({
-        relationTo: 'users';
-        value: string | User;
-      } | null)
-    | ({
         relationTo: 'pages';
         value: string | Page;
       } | null)
@@ -336,6 +348,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'contact-submissions';
         value: string | ContactSubmission;
+      } | null)
+    | ({
+        relationTo: 'users';
+        value: string | User;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -381,37 +397,13 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users_select".
- */
-export interface UsersSelect<T extends boolean = true> {
-  name?: T;
-  role?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
-  sessions?:
-    | T
-    | {
-        id?: T;
-        createdAt?: T;
-        expiresAt?: T;
-      };
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages_select".
  */
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  parent?: T;
   status?: T;
+  parent?: T;
   needsCopy?: T;
   content?: T;
   embeds?:
@@ -502,6 +494,30 @@ export interface ContactSubmissionsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users_select".
+ */
+export interface UsersSelect<T extends boolean = true> {
+  name?: T;
+  role?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv_select".
  */
 export interface PayloadKvSelect<T extends boolean = true> {
@@ -541,19 +557,13 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   createdAt?: T;
 }
 /**
+ * Homepage text, contact details and branding used across the whole website.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-settings".
  */
 export interface SiteSetting {
   id: string;
-  siteTitle: string;
-  tagline?: string | null;
-  logo?: (string | null) | Media;
-  contact?: {
-    address?: string | null;
-    phone?: string | null;
-    email?: string | null;
-  };
   homepageHero?: {
     eyebrow?: string | null;
     heading?: string | null;
@@ -569,12 +579,23 @@ export interface SiteSetting {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Shown in the footer and on the contact page.
+   */
+  contact?: {
+    address?: string | null;
+    phone?: string | null;
+    email?: string | null;
+  };
   contactPageIntro?: string | null;
+  siteTitle: string;
+  tagline?: string | null;
+  logo?: (string | null) | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
 /**
- * The header navigation menu - matches WordPress's Appearance > Menus.
+ * The menu across the top of every page. Drag items to reorder them.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "navigation".
@@ -617,16 +638,6 @@ export interface Navigation {
  * via the `definition` "site-settings_select".
  */
 export interface SiteSettingsSelect<T extends boolean = true> {
-  siteTitle?: T;
-  tagline?: T;
-  logo?: T;
-  contact?:
-    | T
-    | {
-        address?: T;
-        phone?: T;
-        email?: T;
-      };
   homepageHero?:
     | T
     | {
@@ -644,7 +655,17 @@ export interface SiteSettingsSelect<T extends boolean = true> {
         detail?: T;
         id?: T;
       };
+  contact?:
+    | T
+    | {
+        address?: T;
+        phone?: T;
+        email?: T;
+      };
   contactPageIntro?: T;
+  siteTitle?: T;
+  tagline?: T;
+  logo?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

@@ -27,7 +27,9 @@ export const Navigation: GlobalConfig = {
   slug: 'navigation',
   label: 'Navigation Menu',
   admin: {
-    description: 'The header navigation menu - matches WordPress\'s Appearance > Menus.',
+    group: 'Website',
+    hideAPIURL: true,
+    description: 'The menu across the top of every page. Drag items to reorder them.',
   },
   access: {
     read: () => true,

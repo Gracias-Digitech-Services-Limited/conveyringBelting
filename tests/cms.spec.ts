@@ -25,11 +25,15 @@ async function authedFetch(page: Page, url: string, init?: { method?: string }) 
 }
 
 test.describe('TC-01 Dashboard', () => {
-  test('shows all collections and globals after login', async ({ page }) => {
+  test('shows the welcome panel and all sections in plain-English groups after login', async ({
+    page,
+  }) => {
     await page.goto('/admin')
-    await expect(page.getByRole('heading', { name: 'Collections' })).toBeVisible()
-    await expect(page.getByRole('heading', { name: 'Globals' })).toBeVisible()
-    for (const name of ['Users', 'Pages', 'Media', 'Staff Cards', 'Contact Submissions']) {
+    await expect(page.getByRole('heading', { name: /welcome back/i })).toBeVisible()
+    for (const group of ['Website', 'Media Library', 'Team', 'Inbox', 'Settings']) {
+      await expect(page.getByRole('heading', { name: group, exact: true })).toBeVisible()
+    }
+    for (const name of ['Pages', 'Images & Files', 'Business Cards', 'Enquiries', 'Users']) {
       await expect(page.getByRole('link', { name: `Show all ${name}` })).toBeVisible()
     }
     for (const name of ['Site Settings', 'Navigation Menu']) {
@@ -41,7 +45,7 @@ test.describe('TC-01 Dashboard', () => {
 test.describe('TC-02 Media collection', () => {
   test('list view loads seeded items', async ({ page }) => {
     await page.goto('/admin/collections/media')
-    await expect(page.getByRole('heading', { name: 'Media', exact: true })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Images & Files', exact: true })).toBeVisible()
     // 282 items are in the WP export; a handful may have failed to download - just assert the
     // collection is meaningfully populated, not empty or broken.
     const res = await page.request.get('/api/media?limit=1&depth=0')
@@ -71,7 +75,7 @@ test.describe('TC-03 Pages collection', () => {
 test.describe('TC-04 Staff Cards collection', () => {
   test('list view loads all 4 seeded business cards', async ({ page }) => {
     await page.goto('/admin/collections/staff-cards')
-    await expect(page.getByRole('heading', { name: 'Staff Cards', exact: true })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Business Cards', exact: true })).toBeVisible()
     const res = await page.request.get('/api/staff-cards?limit=1&depth=0')
     const json = await res.json()
     expect(json.totalDocs).toBe(4)
@@ -89,7 +93,7 @@ test.describe.serial('TC-05 Page CRUD', () => {
     // accessible name isn't a clean "Title *" - match with an anchored regex instead of an
     // exact string (anchored so it doesn't also match "Meta Title").
     await page.getByLabel(/^Title\s*\*?$/).fill(title)
-    await page.getByLabel(/^Slug\s*\*?$/).fill(slug)
+    await page.getByLabel(/^Page address\s*\*?$/).fill(slug)
     await page.getByRole('button', { name: /save draft/i }).click()
 
     await expect(page).toHaveURL(/\/admin\/collections\/pages\/[a-f0-9]{24}$/, { timeout: 10_000 })
@@ -155,5 +159,16 @@ test.describe('TC-06 Contact form -> CMS integration', () => {
 
     // Clean up the test submission.
     await authedFetch(page, `/api/contact-submissions/${json.docs[0].id}`, { method: 'DELETE' })
+  })
+
+  test('enquiries cannot be created through the REST API (only via the contact form)', async ({
+    playwright,
+  }) => {
+    const anon = await playwright.request.newContext({ baseURL: 'http://localhost:3000' })
+    const res = await anon.post('/api/contact-submissions', {
+      data: { name: 'Spam', company: 'Spam Ltd', email: 'spam@example.com' },
+    })
+    expect(res.status()).toBe(403)
+    await anon.dispose()
   })
 })

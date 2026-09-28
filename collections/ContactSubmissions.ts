@@ -3,17 +3,22 @@ import type { CollectionConfig } from 'payload'
 export const ContactSubmissions: CollectionConfig = {
   slug: 'contact-submissions',
   labels: {
-    singular: 'Contact Submission',
-    plural: 'Contact Submissions',
+    singular: 'Enquiry',
+    plural: 'Enquiries',
   },
   admin: {
+    group: 'Inbox',
     useAsTitle: 'email',
     defaultColumns: ['name', 'company', 'email', 'createdAt'],
+    hideAPIURL: true,
+    description: 'Messages sent through the website contact form. A copy is also emailed to you.',
   },
   access: {
-    // Only logged-in admin users can read submissions; anyone can create one (via the contact form's server action).
+    // Only logged-in admin users can read submissions. Nobody creates them through the admin or
+    // REST API - the contact form's server action uses the Local API, which bypasses access
+    // control, so this only hides the pointless "Create New" button (and blocks API spam).
     read: ({ req }) => Boolean(req.user),
-    create: () => true,
+    create: () => false,
     update: () => false,
     delete: ({ req }) => Boolean(req.user),
   },

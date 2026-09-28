@@ -2,9 +2,13 @@ import type { CollectionConfig } from 'payload'
 
 export const StaffCards: CollectionConfig = {
   slug: 'staff-cards',
+  labels: { singular: 'Business Card', plural: 'Business Cards' },
   admin: {
+    group: 'Team',
     useAsTitle: 'name',
     defaultColumns: ['name', 'title', 'email', 'status'],
+    hideAPIURL: true,
+    description: 'Digital business cards - each one gets its own web link and QR code to share.',
   },
   access: {
     read: () => true,
@@ -101,9 +105,10 @@ export const StaffCards: CollectionConfig = {
       ],
     },
     {
+      // WordPress migration metadata - never edited by hand.
       name: 'wpId',
       type: 'number',
-      admin: { readOnly: true, position: 'sidebar' },
+      admin: { hidden: true },
     },
   ],
 }

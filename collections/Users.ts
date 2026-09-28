@@ -3,8 +3,13 @@ import { isAdmin, isAdminFieldAccess } from '@/lib/access'
 
 export const Users: CollectionConfig = {
   slug: 'users',
+  labels: { singular: 'User', plural: 'Users' },
   admin: {
+    group: 'Settings',
     useAsTitle: 'email',
+    defaultColumns: ['email', 'name', 'role'],
+    hideAPIURL: true,
+    description: 'People who can log in to edit the website.',
   },
   auth: true,
   access: {

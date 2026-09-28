@@ -2,8 +2,13 @@ import type { CollectionConfig } from 'payload'
 
 export const Media: CollectionConfig = {
   slug: 'media',
+  labels: { singular: 'Image or File', plural: 'Images & Files' },
   admin: {
-    useAsTitle: 'alt',
+    group: 'Media Library',
+    useAsTitle: 'filename',
+    defaultColumns: ['filename', 'alt', 'updatedAt'],
+    hideAPIURL: true,
+    description: 'Photos, PDFs and videos used across the website. Upload once, then pick them on any page.',
   },
   access: {
     read: () => true,
@@ -16,30 +21,26 @@ export const Media: CollectionConfig = {
     {
       name: 'alt',
       type: 'text',
+      label: 'Alt text',
       admin: {
-        description: 'Alt text carried over from the WordPress media library - used for accessibility and SEO.',
+        description: 'Describe the image in a few words (e.g. "PVC conveyor belt on a bakery line"). Helps Google and visitors using screen readers.',
       },
     },
     {
       name: 'caption',
       type: 'text',
     },
+    // WordPress migration metadata - used by the seed script to re-link content, never edited.
     {
       name: 'wpId',
       type: 'number',
-      admin: {
-        readOnly: true,
-        description: 'Original WordPress attachment ID (used to re-link content during migration).',
-      },
+      admin: { hidden: true },
       index: true,
     },
     {
       name: 'sourceUrl',
       type: 'text',
-      admin: {
-        readOnly: true,
-        description: 'Original WordPress source URL this file was migrated from.',
-      },
+      admin: { hidden: true },
     },
   ],
 }

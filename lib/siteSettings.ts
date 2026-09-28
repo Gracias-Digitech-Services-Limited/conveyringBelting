@@ -7,7 +7,7 @@ const DEFAULTS: SiteSetting = {
   siteTitle: 'Conveyor Belting Ireland',
   tagline: 'Taking the tension out of your belting needs',
   contact: {
-    address: 'Elmgrove, Gormanston, Co. Meath, K32 C925',
+    address: 'Unit 4, Site 30-31 Duleek Business Park, Duleek, County Meath, A92 NN29',
     phone: '00353 1800 93 8765',
     email: 'justask@ptbltd.ie',
   },

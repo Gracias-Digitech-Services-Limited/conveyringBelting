@@ -10,6 +10,6 @@ setup('authenticate as admin', async ({ page }) => {
   await page.getByLabel('Password').fill(ADMIN_PASSWORD)
   await page.getByRole('button', { name: /login/i }).click()
   await expect(page).toHaveURL(/\/admin(\/)?$/, { timeout: 10_000 })
-  await expect(page.getByRole('heading', { name: 'Collections' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: /welcome back/i })).toBeVisible()
   await page.context().storageState({ path: authFile })
 })

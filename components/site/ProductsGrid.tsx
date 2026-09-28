@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { motion, type Variants } from 'framer-motion'
 import type { NavNode } from '@/lib/nav'
@@ -101,12 +102,14 @@ export function ProductsGrid({ products }: { products: NavNode[] }) {
               {/* Image area */}
               <div className="relative aspect-[4/3] overflow-hidden">
                 {img ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  // next/image resizes the multi-MB source photos down to card size - `sizes`
+                  // mirrors the grid's 2/3/4 column breakpoints below.
+                  <Image
                     src={img}
                     alt=""
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    fill
+                    sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                 ) : (
                   <GradientCard text={item.text} />

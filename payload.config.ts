@@ -23,11 +23,24 @@ export default buildConfig({
   admin: {
     user: Users.slug,
     theme: 'light',
+    // Present the admin as "the website editor" rather than as Payload - the client shouldn't
+    // need to know what CMS it runs on.
+    meta: {
+      titleSuffix: ' - Conveyor Belting Ireland',
+    },
+    components: {
+      graphics: {
+        Logo: '/components/admin/Branding#AdminLogo',
+        Icon: '/components/admin/Branding#AdminIcon',
+      },
+      beforeDashboard: ['/components/admin/Welcome#Welcome'],
+    },
     importMap: {
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Pages, Media, StaffCards, ContactSubmissions],
+  // Order sets the admin sidebar/dashboard order: day-to-day content first, account admin last.
+  collections: [Pages, Media, StaffCards, ContactSubmissions, Users],
   globals: [SiteSettings, Navigation],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
