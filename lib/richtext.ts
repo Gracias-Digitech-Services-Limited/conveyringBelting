@@ -233,10 +233,53 @@ export function extractTextSections(doc: PayloadRichText | null | undefined): Te
   return sections
 }
 
-/** The old theme signed off almost every page with the company address/phone in the body copy -
- * useful once, redundant once the header/footer/contact page already carry it everywhere else. */
+/** The old theme signed off almost every page with the company's (now outdated) address/phone
+ * in the body copy - useful once, redundant once the header/footer/contact page already carry
+ * the current details everywhere else. The WP export sometimes splits the sign-off across
+ * several nodes (company name on its own line, then address, then phone, then email) rather
+ * than one clean paragraph, and at least one real sentence happens to end with the support
+ * email inline ("...upon request justask@ptbltd.ie") - so this can't just check for the
+ * presence of a token. Instead, a line counts as boilerplate only if it's made up entirely of
+ * these tokens (plus stray punctuation) with no other prose left over. */
+const ADDRESS_TOKEN_RE =
+  /K32 C925|(?:justask|sales)@ptbltd\.ie|[TM]:\s*\+?00?353[\d\s()]*|\+353[\d\s()]*|Unit\s*\d+,?\s*|Elmgrove|Gormanston|County Meath|Co\.?\s*Meath|PTB Innovation Ltd|ProTech Belting Ireland/gi
+
 export function isBoilerplateAddress(body: string): boolean {
-  return /@ptbltd\.ie|T:\s*00353|K32 C925/i.test(body)
+  const trimmed = body.trim()
+  if (!trimmed || !new RegExp(ADDRESS_TOKEN_RE.source, 'i').test(trimmed)) return false
+  const residue = trimmed
+    .replace(new RegExp(ADDRESS_TOKEN_RE.source, 'gi'), '')
+    .replace(/[\s:,.\-–|]+/g, '')
+  return residue.length === 0
+}
+
+/**
+ * Drops boilerplate address/contact sign-off nodes from a page's richText content - the
+ * generic page renderer (unlike the homepage and hub-page intros) otherwise shows this raw
+ * migrated content verbatim, duplicating the current header/footer contact info with a stale
+ * one (old phone number, missing unit number). Non-address content is left untouched.
+ */
+export function stripBoilerplateAddress(
+  doc: PayloadRichText | null | undefined,
+): PayloadRichText | null {
+  if (!doc) return null
+  const root = (doc as { root?: { children?: LooseLexicalNode[] } }).root
+  const children = (root?.children ?? []) as LooseLexicalNode[]
+  const filtered = children.filter((node) => !isBoilerplateAddress(collectText(node)))
+
+  return {
+    ...doc,
+    root: { ...root, children: filtered },
+  } as unknown as PayloadRichText
+}
+
+/** Whether a page's richText content has anything left to show after stripping boilerplate -
+ * a handful of migrated pages were nothing but the address sign-off, so they need the same
+ * "awaiting copy" treatment as a genuinely empty page rather than rendering blank. */
+export function hasVisibleContent(doc: PayloadRichText | null | undefined): boolean {
+  const children = ((doc as { root?: { children?: LooseLexicalNode[] } })?.root?.children ??
+    []) as LooseLexicalNode[]
+  return children.some((node) => node.type === 'upload' || collectText(node).trim().length > 0)
 }
 
 /**

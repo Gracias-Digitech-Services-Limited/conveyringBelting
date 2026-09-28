@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { getStaffCardBySlug, mediaUrl } from '@/lib/staffCards'
+import { getStaffCardBySlug, mediaUrl, mediaDataUrl } from '@/lib/staffCards'
 import { QrCanvas } from '@/components/site/QrCanvas'
 import { SERVER_URL } from '@/lib/serverUrl'
 
@@ -20,7 +20,7 @@ export default async function StaffCardPage({ params }: Args) {
   if (!card) notFound()
 
   const photoUrl = mediaUrl(card.photo)
-  const logoUrl = mediaUrl(card.logo)
+  const logoUrl = await mediaDataUrl(card.logo)
   const vCardUrl = `/card/${card.slug}/vcard`
   const cardPageUrl = `${SERVER_URL ?? ''}/card/${card.slug}`
 

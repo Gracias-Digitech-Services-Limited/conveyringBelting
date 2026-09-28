@@ -15,7 +15,7 @@ export function RichText({
   return (
     <LexicalRichText
       data={data as unknown as SerializedEditorState}
-      className={`prose prose-slate dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-amber-700 dark:prose-a:text-brand-amber-light prose-a:no-underline hover:prose-a:underline ${className ?? ''}`}
+      className={`prose prose-slate dark:prose-invert max-w-none prose-headings:font-semibold prose-p:text-justify prose-a:text-amber-700 dark:prose-a:text-brand-amber-light prose-a:no-underline hover:prose-a:underline ${className ?? ''}`}
     />
   )
 }

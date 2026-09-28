@@ -9,6 +9,7 @@ import { HomePage } from '@/components/site/HomePage'
 import { Reveal } from '@/components/site/Reveal'
 import { HoverCard } from '@/components/site/HoverCard'
 import { getNavNodeForSlug, getRelatedNavGroup } from '@/lib/nav'
+import { stripBoilerplateAddress, hasVisibleContent } from '@/lib/richtext'
 import type { Page } from '@/payload-types'
 
 export const revalidate = 60
@@ -66,6 +67,12 @@ export default async function CmsPage({ params }: Args) {
   const isHub = Boolean(navNode?.children?.length)
   const related = isHub ? null : await getRelatedNavGroup(resolvedSlug)
 
+  // The raw migrated content still carries the old theme's per-page address/phone sign-off,
+  // which duplicates (and in places contradicts) the current contact info in the header/footer
+  // - stripped here so it doesn't render twice with two different phone numbers.
+  const content = stripBoilerplateAddress(page.content)
+  const needsCopy = page.needsCopy || !hasVisibleContent(content)
+
   return (
     <article>
       <div className="border-b border-border-subtle bg-muted">
@@ -86,18 +93,14 @@ export default async function CmsPage({ params }: Args) {
       </div>
 
       <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-        {page.needsCopy && (
+        {needsCopy && (
           <div className="mb-8 rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-300">
             This page is still awaiting final copy from the migration - content coming soon.
           </div>
         )}
 
         <Reveal>
-          {page.content ? (
-            <RichText data={page.content} />
-          ) : (
-            !page.needsCopy && <p className="text-text-faint">No content yet.</p>
-          )}
+          {!needsCopy && content && <RichText data={content} />}
           <PageEmbeds embeds={page.embeds} />
         </Reveal>
 
