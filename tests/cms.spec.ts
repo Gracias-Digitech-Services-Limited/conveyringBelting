@@ -102,7 +102,7 @@ test.describe.serial('TC-05 Page CRUD', () => {
     const res = await page.request.get(`/api/pages?where[slug][equals]=${slug}&depth=0`)
     const json = await res.json()
     expect(json.totalDocs).toBe(1)
-    expect(json.docs[0].status).toBe('draft')
+    expect(json.docs[0]._status).toBe('draft')
   })
 
   test('edits the page and the change persists after reload', async ({ page }) => {
@@ -164,7 +164,11 @@ test.describe('TC-06 Contact form -> CMS integration', () => {
   test('enquiries cannot be created through the REST API (only via the contact form)', async ({
     playwright,
   }) => {
-    const anon = await playwright.request.newContext({ baseURL: 'http://localhost:3000' })
+    // Explicitly empty session - otherwise the project's admin storageState is inherited.
+    const anon = await playwright.request.newContext({
+      baseURL: process.env.PW_BASE_URL ?? 'http://localhost:3000',
+      storageState: { cookies: [], origins: [] },
+    })
     const res = await anon.post('/api/contact-submissions', {
       data: { name: 'Spam', company: 'Spam Ltd', email: 'spam@example.com' },
     })

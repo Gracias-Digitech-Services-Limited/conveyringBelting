@@ -1,5 +1,6 @@
 import type { GlobalConfig } from 'payload'
 import { isAdmin } from '@/lib/access'
+import { revalidateAfterChange } from '@/lib/revalidate'
 
 /**
  * Site-wide branding and copy that WordPress would normally split across Settings > General,
@@ -17,6 +18,9 @@ export const SiteSettings: GlobalConfig = {
   access: {
     read: () => true,
     update: isAdmin,
+  },
+  hooks: {
+    afterChange: [revalidateAfterChange],
   },
   fields: [
     {

@@ -1,4 +1,16 @@
 import type { CollectionConfig } from 'payload'
+import { revalidateAfterChange, revalidateAfterDelete } from '@/lib/revalidate'
+
+/** "Mary O'Brien" -> "mary-obrien": lowercase, accents/apostrophes dropped, words hyphenated. */
+function toSlug(text: string): string {
+  return text
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/['’]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
 
 export const StaffCards: CollectionConfig = {
   slug: 'staff-cards',
@@ -6,14 +18,29 @@ export const StaffCards: CollectionConfig = {
   admin: {
     group: 'Team',
     useAsTitle: 'name',
-    defaultColumns: ['name', 'title', 'email', 'status'],
+    defaultColumns: ['name', 'title', 'email', 'updatedAt'],
     hideAPIURL: true,
-    description: 'Digital business cards - each one gets its own web link and QR code to share.',
+    description:
+      'Digital business cards. Add a person and save - their card page and QR code are created automatically, ready to download and print.',
   },
   access: {
     read: () => true,
   },
+  hooks: {
+    afterChange: [revalidateAfterChange],
+    afterDelete: [revalidateAfterDelete],
+  },
   fields: [
+    {
+      // Live QR code for this card's web page, with PNG/SVG downloads - so the admin can print
+      // it straight from here. Display-only (a `ui` field stores nothing).
+      name: 'qrCode',
+      type: 'ui',
+      admin: {
+        position: 'sidebar',
+        components: { Field: '/components/admin/CardQrField#CardQrField' },
+      },
+    },
     {
       name: 'name',
       type: 'text',
@@ -22,12 +49,19 @@ export const StaffCards: CollectionConfig = {
     {
       name: 'slug',
       type: 'text',
-      required: true,
+      label: 'Card address',
       unique: true,
       index: true,
       admin: {
-        description: 'Used in the card URL: /card/[slug]',
+        position: 'sidebar',
+        description:
+          "The end of the card's web link (/card/...). Leave blank to create it from the name. Changing it breaks QR codes already printed.",
       },
+      hooks: {
+        // Fill from the name when left blank, and tidy whatever was typed into a URL-safe form.
+        beforeValidate: [({ value, data }) => toSlug(String(value || data?.name || ''))],
+      },
+      validate: (value: unknown) => (value ? true : 'Enter a name so the card address can be created.'),
     },
     {
       name: 'title',
@@ -56,9 +90,14 @@ export const StaffCards: CollectionConfig = {
       type: 'text',
     },
     {
+      // Carried over from WordPress but deliberately ignored by the website: cards are handed
+      // out as printed QR codes, so their link must keep working whatever this says (see
+      // lib/staffCards.ts). Hidden so it doesn't look like an on/off switch - delete a card to
+      // take its link down.
       name: 'status',
       type: 'select',
-      defaultValue: 'draft',
+      defaultValue: 'publish',
+      admin: { hidden: true },
       options: [
         { label: 'Published', value: 'publish' },
         { label: 'Draft', value: 'draft' },

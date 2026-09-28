@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { revalidateAfterChange, revalidateAfterDelete } from '@/lib/revalidate'
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -12,6 +13,11 @@ export const Media: CollectionConfig = {
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    // Pages embed images/PDFs by reference, so alt text or file changes need a site refresh.
+    afterChange: [revalidateAfterChange],
+    afterDelete: [revalidateAfterDelete],
   },
   upload: {
     staticDir: 'media',

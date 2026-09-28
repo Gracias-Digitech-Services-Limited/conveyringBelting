@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { draftMode } from 'next/headers'
 import Link from 'next/link'
 import { getPayloadClient } from '@/lib/payload'
 import { RichText } from '@/components/RichText'
@@ -13,10 +14,16 @@ import type { Page } from '@/payload-types'
 export const revalidate = 60
 
 async function getPage(slug: string): Promise<Page | null> {
+  // Draft Mode is only ever switched on for logged-in editors (app/(frontend)/next/preview) -
+  // they see the latest draft; everyone else only ever sees published pages.
+  const { isEnabled: preview } = await draftMode()
   const payload = await getPayloadClient()
   const result = await payload.find({
     collection: 'pages',
-    where: { slug: { equals: slug }, status: { not_equals: 'private' } },
+    draft: preview,
+    where: preview
+      ? { slug: { equals: slug } }
+      : { slug: { equals: slug }, _status: { equals: 'published' } },
     limit: 1,
     depth: 1,
   })

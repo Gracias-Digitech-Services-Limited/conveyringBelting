@@ -8,7 +8,7 @@ import allPages from './fixtures/all-pages.json' with { type: 'json' }
  * broken <img> tags, and its <title> reflects the page.
  *
  * To regenerate the fixture after content changes:
- *   fetch('/api/pages?where[status][equals]=publish&limit=100&depth=0')
+ *   fetch('/api/pages?where[_status][equals]=published&limit=100&depth=0')
  *     .then(r => r.json()).then(j => j.docs.map(d => ({ slug: d.slug, title: d.title })))
  */
 

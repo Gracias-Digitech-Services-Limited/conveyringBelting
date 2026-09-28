@@ -130,7 +130,7 @@ export interface UserAuthOperations {
   };
 }
 /**
- * The pages of your website - text, images, videos and how each appears in Google.
+ * The pages of your website. "Save Draft" keeps changes private, "Preview" shows them in the website design, and "Publish changes" puts them live.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages".
@@ -142,10 +142,6 @@ export interface Page {
    * The end of the web address, e.g. "bakery-industry" for /bakery-industry. Changing this breaks existing links.
    */
   slug: string;
-  /**
-   * Only Published pages appear on the website.
-   */
-  status: 'publish' | 'draft' | 'private';
   /**
    * Optional - the page this one sits under, for breadcrumbs.
    */
@@ -231,7 +227,7 @@ export interface Media {
   focalY?: number | null;
 }
 /**
- * Digital business cards - each one gets its own web link and QR code to share.
+ * Digital business cards. Add a person and save - their card page and QR code are created automatically, ready to download and print.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "staff-cards".
@@ -240,9 +236,9 @@ export interface StaffCard {
   id: string;
   name: string;
   /**
-   * Used in the card URL: /card/[slug]
+   * The end of the card's web link (/card/...). Leave blank to create it from the name. Changing it breaks QR codes already printed.
    */
-  slug: string;
+  slug?: string | null;
   title?: string | null;
   org?: string | null;
   phone?: string | null;
@@ -402,7 +398,6 @@ export interface PayloadMigration {
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  status?: T;
   parent?: T;
   needsCopy?: T;
   content?: T;

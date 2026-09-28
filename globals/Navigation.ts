@@ -1,5 +1,6 @@
 import type { Field, GlobalConfig } from 'payload'
 import { isAdmin } from '@/lib/access'
+import { revalidateAfterChange } from '@/lib/revalidate'
 
 /**
  * The real menu goes 4 levels deep (Products > Conveyor Belting > PVC Conveyor Belting > each
@@ -36,6 +37,9 @@ export const Navigation: GlobalConfig = {
     // Menu editing is an Administrator-level capability in WordPress too (Editors don't get
     // "edit_theme_options" by default) - keep that split here.
     update: isAdmin,
+  },
+  hooks: {
+    afterChange: [revalidateAfterChange],
   },
   fields: [
     {

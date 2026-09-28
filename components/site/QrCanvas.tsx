@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import type QRCodeStyling from 'qr-code-styling'
+import { cardQrOptions, type QrDotsType } from '@/lib/qr'
 
 export function QrCanvas({
   data,
@@ -14,7 +15,7 @@ export function QrCanvas({
   data: string
   color?: string
   backgroundColor?: string
-  dotsType?: 'dots' | 'rounded' | 'classy' | 'square'
+  dotsType?: QrDotsType
   logoUrl?: string
   fileName?: string
 }) {
@@ -28,16 +29,9 @@ export function QrCanvas({
     import('qr-code-styling').then(({ default: QRCodeStyling }) => {
       if (cancelled || !containerRef.current) return
       containerRef.current.innerHTML = ''
-      qrRef.current = new QRCodeStyling({
-        width: 240,
-        height: 240,
-        data,
-        image: logoUrl,
-        dotsOptions: { color, type: dotsType },
-        backgroundOptions: { color: backgroundColor },
-        cornersSquareOptions: { color, type: 'extra-rounded' },
-        imageOptions: { crossOrigin: 'anonymous', margin: 6, imageSize: 0.35 },
-      })
+      qrRef.current = new QRCodeStyling(
+        cardQrOptions({ data, logoUrl, style: { color, backgroundColor, dotsType } }),
+      )
       qrRef.current.append(containerRef.current)
       setReady(true)
     })

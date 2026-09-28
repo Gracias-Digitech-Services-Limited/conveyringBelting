@@ -209,10 +209,14 @@ async function seedPages(payload: Awaited<ReturnType<typeof getPayload>>) {
       imagesRestored++
     }
 
+    // WordPress "publish" -> published in Payload (live on the site); draft/private -> an
+    // unpublished draft, which the website never shows.
+    const draft = item.status !== 'publish'
+
     const data = {
       title,
       slug: item.resolvedSlug,
-      status: item.status,
+      _status: draft ? ('draft' as const) : ('published' as const),
       needsCopy: contentIsEmpty,
       content,
       ...(embeds ? { embeds } : {}),
@@ -227,9 +231,6 @@ async function seedPages(payload: Awaited<ReturnType<typeof getPayload>>) {
         modifiedAt: item.modified,
       },
     }
-
-    // Publish status.publish -> live version; draft/private -> kept as a draft version in Payload.
-    const draft = item.status !== 'publish'
 
     if (existing.docs[0]) {
       await payload.update({

@@ -1,21 +1,44 @@
 import type { CollectionConfig } from 'payload'
+import { revalidateAfterChange, revalidateAfterDelete } from '@/lib/revalidate'
 
+/**
+ * Publishing uses Payload's own draft system as the single source of truth: "Save Draft" keeps
+ * changes private, "Publish changes" puts them live, "Unpublish" takes a page down. The website
+ * only ever shows published pages (see app/(frontend)/[[...slug]]/page.tsx), and logged-in
+ * editors can see an unpublished page in the real design via the Preview button.
+ *
+ * (This replaced a separate WordPress-style "Visibility" select that the website read instead -
+ * two competing "draft" states that disagreed with each other. Its old values are still in the
+ * database, unused; scripts/publish-live-pages.ts converted them once.)
+ */
 export const Pages: CollectionConfig = {
   slug: 'pages',
   labels: { singular: 'Page', plural: 'Pages' },
   admin: {
     group: 'Website',
     useAsTitle: 'title',
-    defaultColumns: ['title', 'slug', 'status', 'updatedAt'],
+    defaultColumns: ['title', 'slug', '_status', 'updatedAt'],
     listSearchableFields: ['title', 'slug'],
     hideAPIURL: true,
-    description: 'The pages of your website - text, images, videos and how each appears in Google.',
+    description:
+      'The pages of your website. "Save Draft" keeps changes private, "Preview" shows them in the website design, and "Publish changes" puts them live.',
+    // Opens the page on the real site in preview mode, showing unpublished changes. The route
+    // checks the editor is logged in before enabling it.
+    preview: (doc) =>
+      typeof doc?.slug === 'string' && doc.slug ? `/next/preview?slug=${encodeURIComponent(doc.slug)}` : null,
   },
   access: {
-    read: () => true,
+    // Visitors (and the public REST/GraphQL API) only ever get published pages - drafts stay
+    // private to logged-in editors. The website itself reads via the Local API, which filters
+    // on _status explicitly.
+    read: ({ req }) => (req.user ? true : { _status: { equals: 'published' } }),
   },
   versions: {
     drafts: true,
+  },
+  hooks: {
+    afterChange: [revalidateAfterChange],
+    afterDelete: [revalidateAfterDelete],
   },
   fields: [
     {
@@ -33,22 +56,6 @@ export const Pages: CollectionConfig = {
       admin: {
         position: 'sidebar',
         description: 'The end of the web address, e.g. "bakery-industry" for /bakery-industry. Changing this breaks existing links.',
-      },
-    },
-    {
-      name: 'status',
-      type: 'select',
-      required: true,
-      defaultValue: 'draft',
-      label: 'Visibility',
-      options: [
-        { label: 'Published', value: 'publish' },
-        { label: 'Draft', value: 'draft' },
-        { label: 'Private', value: 'private' },
-      ],
-      admin: {
-        position: 'sidebar',
-        description: 'Only Published pages appear on the website.',
       },
     },
     {

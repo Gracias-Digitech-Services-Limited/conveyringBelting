@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test'
 
+// Defaults to the local dev server; set PW_BASE_URL to test a production build (`next start`).
+const baseURL = process.env.PW_BASE_URL ?? 'http://localhost:3000'
+
 export default defineConfig({
   testDir: './tests',
   timeout: 30_000,
@@ -7,7 +10,7 @@ export default defineConfig({
   workers: 1,
   reporter: [['list'], ['html', { open: 'never', outputFolder: 'playwright-report' }]],
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL,
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
@@ -16,6 +19,12 @@ export default defineConfig({
     {
       name: 'cms',
       testMatch: /cms\.spec\.ts/,
+      use: { ...devices['Desktop Chrome'], storageState: 'playwright/.auth/admin.json' },
+      dependencies: ['setup'],
+    },
+    {
+      name: 'cms-admin',
+      testMatch: /cms-admin\.spec\.ts/,
       use: { ...devices['Desktop Chrome'], storageState: 'playwright/.auth/admin.json' },
       dependencies: ['setup'],
     },
@@ -39,7 +48,7 @@ export default defineConfig({
   // spawning a second instance, but fail fast if nothing is listening.
   webServer: {
     command: 'echo "expects npm run dev already running on :3000"',
-    url: 'http://localhost:3000',
+    url: baseURL,
     reuseExistingServer: true,
     timeout: 5_000,
   },

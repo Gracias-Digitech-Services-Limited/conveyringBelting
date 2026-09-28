@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "tsx scripts/seed.ts",
+    "publish-live-pages": "tsx scripts/publish-live-pages.ts",
     "generate:types": "payload generate:types",
     "generate:importmap": "payload generate:importmap",
     "test": "playwright test"

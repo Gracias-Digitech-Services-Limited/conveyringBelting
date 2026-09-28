@@ -2,10 +2,12 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { Geist, Geist_Mono } from 'next/font/google'
 import Script from 'next/script'
+import { draftMode } from 'next/headers'
 import '../globals.css'
 import { Header } from '@/components/site/Header'
 import { Footer } from '@/components/site/Footer'
 import { BackToTop } from '@/components/site/BackToTop'
+import { PreviewBanner } from '@/components/site/PreviewBanner'
 import { getHeaderNav } from '@/lib/nav'
 import { getSiteSettings } from '@/lib/siteSettings'
 import { SERVER_URL } from '@/lib/serverUrl'
@@ -35,7 +37,11 @@ const NO_FLASH_THEME_SCRIPT = `
 `
 
 export default async function FrontendLayout({ children }: { children: ReactNode }) {
-  const [nav, settings] = await Promise.all([getHeaderNav(), getSiteSettings()])
+  const [nav, settings, { isEnabled: isPreview }] = await Promise.all([
+    getHeaderNav(),
+    getSiteSettings(),
+    draftMode(),
+  ])
 
   return (
     <html
@@ -54,6 +60,7 @@ export default async function FrontendLayout({ children }: { children: ReactNode
         <main className="flex-1">{children}</main>
         <Footer siteTitle={settings.siteTitle} tagline={settings.tagline ?? undefined} contact={settings.contact} />
         <BackToTop />
+        {isPreview && <PreviewBanner />}
       </body>
     </html>
   )
