@@ -11,7 +11,9 @@ export const ContactSubmissions: CollectionConfig = {
     useAsTitle: 'email',
     defaultColumns: ['name', 'company', 'email', 'createdAt'],
     hideAPIURL: true,
-    description: 'Messages sent through the website contact form. A copy is also emailed to you.',
+    // Deliberately doesn't promise an email copy: that depends on SES credentials being set in
+    // the deployment (see app/(frontend)/contact-us/actions.ts); this list is the reliable record.
+    description: 'Messages sent through the website contact form - every enquiry is saved here.',
   },
   access: {
     // Only logged-in admin users can read submissions. Nobody creates them through the admin or
