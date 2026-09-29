@@ -14,7 +14,8 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
       },
-      max_memory_restart: '512M',
+      // Next.js + Payload regularly uses more than 512 MB - a lower cap makes PM2 restart-loop.
+      max_memory_restart: '1G',
     },
   ],
 }

@@ -13,6 +13,7 @@ import { ContactSubmissions } from './collections/ContactSubmissions'
 import { Navigation } from './globals/Navigation'
 import { SiteSettings } from './globals/SiteSettings'
 import { SERVER_URL } from './lib/serverUrl'
+import { sesEmailAdapter } from './lib/sesEmailAdapter'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -44,6 +45,18 @@ export default buildConfig({
   collections: [Pages, Media, StaffCards, ContactSubmissions, Users],
   globals: [SiteSettings, Navigation],
   editor: lexicalEditor(),
+  // Admin emails ("Forgot password") go through Amazon SES when EMAIL_TRANSPORT=ses - set that
+  // only where AWS credentials exist (on EC2: the instance's IAM role). Without it, Payload
+  // just writes emails to the server log, which is what local dev and the Vercel review use.
+  ...(process.env.EMAIL_TRANSPORT === 'ses' && process.env.SES_FROM_EMAIL
+    ? {
+        email: sesEmailAdapter({
+          fromAddress: process.env.SES_FROM_EMAIL,
+          fromName: 'Conveyor Belting Ireland',
+          region: process.env.AWS_REGION,
+        }),
+      }
+    : {}),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
