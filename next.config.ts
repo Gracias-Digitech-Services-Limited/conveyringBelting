@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
       // see payload.config.ts's generateFileURL) - wildcarded since the `pub-<hash>` subdomain
       // is bucket-specific and would change if the R2 bucket is ever recreated.
       { protocol: 'https', hostname: '*.r2.dev' },
+      // AWS media: CloudFront's own address while testing, then media.conveyorbelting.ie.
+      { protocol: 'https', hostname: '*.cloudfront.net' },
+      { protocol: 'https', hostname: 'media.conveyorbelting.ie' },
     ],
   },
   async redirects() {

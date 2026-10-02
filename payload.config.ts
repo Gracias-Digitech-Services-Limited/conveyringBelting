@@ -72,9 +72,8 @@ export default buildConfig({
             collections: {
               media: process.env.S3_PUBLIC_URL
                 ? {
-                    // Serve files directly from R2's public URL instead of proxying every
-                    // request through a Vercel serverless function (which was adding ~1-2s of
-                    // pure overhead per image on top of the actual transfer).
+                    // Serve files straight from the public media URL (CloudFront on AWS, or
+                    // R2's public URL) instead of proxying every request through the app.
                     disablePayloadAccessControl: true,
                     generateFileURL: ({ filename }) => `${process.env.S3_PUBLIC_URL}/${filename}`,
                   }
@@ -85,12 +84,18 @@ export default buildConfig({
               region: process.env.S3_REGION || 'auto',
               // Cloudflare R2 is S3-compatible but needs its own endpoint (unlike real AWS S3,
               // which infers it from the region) and path-style URLs.
-              ...(process.env.S3_ENDPOINT ? { endpoint: process.env.S3_ENDPOINT } : {}),
-              forcePathStyle: true,
-              credentials: {
-                accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
-                secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
-              },
+              ...(process.env.S3_ENDPOINT ? { endpoint: process.env.S3_ENDPOINT, forcePathStyle: true } : {}),
+              // Explicit keys when given (R2, or S3 from outside AWS). Otherwise the AWS SDK's
+              // default chain is used - on EC2 that's the instance's IAM role, so no keys are
+              // stored on the server.
+              ...(process.env.S3_ACCESS_KEY_ID && process.env.S3_SECRET_ACCESS_KEY
+                ? {
+                    credentials: {
+                      accessKeyId: process.env.S3_ACCESS_KEY_ID,
+                      secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+                    },
+                  }
+                : {}),
             },
           }),
         ]
